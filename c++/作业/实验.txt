@@ -1,0 +1,14 @@
+﻿“实验1.exe”(Win32): 已加载“F:\代码\c++\作业\实验1\Debug\实验1.exe”。已加载符号。
+“实验1.exe”(Win32): 已加载“C:\Windows\SysWOW64\ntdll.dll”。
+“实验1.exe”(Win32): 已加载“C:\Windows\SysWOW64\kernel32.dll”。
+“实验1.exe”(Win32): 已加载“C:\Windows\SysWOW64\KernelBase.dll”。
+“实验1.exe”(Win32): 已加载“C:\Windows\SysWOW64\msvcp140d.dll”。
+“实验1.exe”(Win32): 已加载“C:\Windows\SysWOW64\vcruntime140d.dll”。
+“实验1.exe”(Win32): 已加载“C:\Windows\SysWOW64\ucrtbased.dll”。
+“实验1.exe”(Win32): 已加载“C:\Windows\SysWOW64\kernel.appcore.dll”。
+“实验1.exe”(Win32): 已加载“C:\Windows\SysWOW64\msvcrt.dll”。
+“实验1.exe”(Win32): 已加载“C:\Windows\SysWOW64\rpcrt4.dll”。
+线程 0xd4d8 已退出，返回值为 0 (0x0)。
+线程 0x716c 已退出，返回值为 0 (0x0)。
+线程 0xb254 已退出，返回值为 0 (0x0)。
+程序“[37016] 实验1.exe”已退出，返回值为 0 (0x0)。

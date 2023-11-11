@@ -1,0 +1,15 @@
+﻿  源.cpp
+E:\云文件\BaiduNetdiskWorkspace\代码\c++\练习\实验二\源.cpp(14,1): error C2027: 使用了未定义类型“Student”
+E:\云文件\BaiduNetdiskWorkspace\代码\c++\练习\实验二\源.cpp(4): message : 参见“Student”的声明
+E:\云文件\BaiduNetdiskWorkspace\代码\c++\练习\实验二\源.cpp(26,13): error C2027: 使用了未定义类型“Student”
+E:\云文件\BaiduNetdiskWorkspace\代码\c++\练习\实验二\源.cpp(4): message : 参见“Student”的声明
+E:\云文件\BaiduNetdiskWorkspace\代码\c++\练习\实验二\源.cpp(27,1): error C2027: 使用了未定义类型“Student”
+E:\云文件\BaiduNetdiskWorkspace\代码\c++\练习\实验二\源.cpp(4): message : 参见“Student”的声明
+E:\云文件\BaiduNetdiskWorkspace\代码\c++\练习\实验二\源.cpp(28,1): error C2027: 使用了未定义类型“Student”
+E:\云文件\BaiduNetdiskWorkspace\代码\c++\练习\实验二\源.cpp(4): message : 参见“Student”的声明
+E:\云文件\BaiduNetdiskWorkspace\代码\c++\练习\实验二\源.cpp(29,1): error C2027: 使用了未定义类型“Student”
+E:\云文件\BaiduNetdiskWorkspace\代码\c++\练习\实验二\源.cpp(4): message : 参见“Student”的声明
+E:\云文件\BaiduNetdiskWorkspace\代码\c++\练习\实验二\源.cpp(30,1): error C2027: 使用了未定义类型“Student”
+E:\云文件\BaiduNetdiskWorkspace\代码\c++\练习\实验二\源.cpp(4): message : 参见“Student”的声明
+E:\云文件\BaiduNetdiskWorkspace\代码\c++\练习\实验二\源.cpp(31,1): error C2027: 使用了未定义类型“Student”
+E:\云文件\BaiduNetdiskWorkspace\代码\c++\练习\实验二\源.cpp(4): message : 参见“Student”的声明

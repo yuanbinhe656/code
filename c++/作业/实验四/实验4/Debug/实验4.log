@@ -1,0 +1,3 @@
+﻿  源.cpp
+F:\代码\c++\作业\实验四\实验4\源.cpp(119): warning C4715: “Rational::operator=”: 不是所有的控件路径都返回值
+  实验4.vcxproj -> F:\代码\c++\作业\实验四\实验4\Debug\实验4.exe

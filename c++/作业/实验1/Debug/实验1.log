@@ -1,0 +1,5 @@
+﻿  源.cpp
+F:\代码\c++\作业\实验1\源.cpp(55,36): warning C4305: “参数”: 从“double”到“float”截断
+F:\代码\c++\作业\实验1\源.cpp(56,36): warning C4305: “参数”: 从“double”到“float”截断
+F:\代码\c++\作业\实验1\源.cpp(58,36): warning C4305: “参数”: 从“double”到“float”截断
+  实验1.vcxproj -> F:\代码\c++\作业\实验1\Debug\实验1.exe

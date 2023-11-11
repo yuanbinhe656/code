@@ -1,0 +1,8 @@
+﻿  原始字面量.cpp
+E:\BaiduSyncdisk\代码\c++\C++11\原始字面量\原始字面量\原始字面量.cpp(17,34): warning C4305: “初始化”: 从“double”到“const float”截断
+E:\BaiduSyncdisk\代码\c++\C++11\原始字面量\原始字面量\原始字面量.cpp(43,3): warning C4297: “excepDiv”: 假定函数不引发异常，但确实发生了
+E:\BaiduSyncdisk\代码\c++\C++11\原始字面量\原始字面量\原始字面量.cpp(43,3): message : 在函数上指定了 __declspec(nothrow)、throw()、noexcept(true)或 noexcept
+E:\BaiduSyncdisk\代码\c++\C++11\原始字面量\原始字面量\原始字面量.cpp(86,15): warning C4129: “c”: 不可识别的字符转义序列
+E:\BaiduSyncdisk\代码\c++\C++11\原始字面量\原始字面量\原始字面量.cpp(93,32): warning C4305: “初始化”: 从“unsigned __int64”到“int”截断
+E:\BaiduSyncdisk\代码\c++\C++11\原始字面量\原始字面量\原始字面量.cpp(93,12): warning C4309: “初始化”: 截断常量值
+  原始字面量.vcxproj -> E:\BaiduSyncdisk\代码\c++\C++11\原始字面量\x64\Debug\原始字面量.exe

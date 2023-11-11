@@ -1,0 +1,3 @@
+﻿  源.cpp
+源.obj : error LNK2005: _main 已经在 期末作业1.obj 中定义
+F:\代码\c++\作业\期末作业1\Debug\期末作业1.exe : fatal error LNK1169: 找到一个或多个多重定义的符号

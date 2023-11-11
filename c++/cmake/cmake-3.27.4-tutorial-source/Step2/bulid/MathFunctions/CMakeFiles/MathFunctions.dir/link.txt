@@ -1,0 +1,2 @@
+D:\soft\w64devkit\w64devkit\bin\ar.exe qc libMathFunctions.a CMakeFiles/MathFunctions.dir/MathFunctions.cxx.obj CMakeFiles/MathFunctions.dir/mysqrt.cxx.obj
+D:\soft\w64devkit\w64devkit\bin\ranlib.exe libMathFunctions.a

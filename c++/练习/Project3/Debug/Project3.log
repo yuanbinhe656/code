@@ -1,0 +1,11 @@
+﻿  源.cpp
+F:\代码\c++\练习\Project3\源.cpp(41,11): warning C4244: “return”: 从“float”转换到“int”，可能丢失数据
+F:\代码\c++\练习\Project3\源.cpp(45,11): warning C4244: “return”: 从“float”转换到“int”，可能丢失数据
+F:\代码\c++\练习\Project3\源.cpp(174,1): warning C4326: “main”的返回类型应为“int”而非“void”
+F:\代码\c++\练习\Project3\源.cpp(177,21): warning C4305: “参数”: 从“double”到“float”截断
+F:\代码\c++\练习\Project3\源.cpp(180,2): warning C4305: “参数”: 从“double”到“float”截断
+F:\代码\c++\练习\Project3\源.cpp(186,20): warning C4305: “参数”: 从“double”到“float”截断
+F:\代码\c++\练习\Project3\源.cpp(187,20): warning C4305: “参数”: 从“double”到“float”截断
+F:\代码\c++\练习\Project3\源.cpp(188,20): warning C4305: “参数”: 从“double”到“float”截断
+F:\代码\c++\练习\Project3\源.cpp(189,20): warning C4305: “参数”: 从“double”到“float”截断
+  Project3.vcxproj -> F:\代码\c++\练习\Project3\Debug\Project3.exe

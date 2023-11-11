@@ -1,0 +1,10 @@
+﻿  源.cpp
+F:\代码\c++\作业\1234\源.cpp(25,12): error C2512: “GoodClass”: 没有合适的默认构造函数可用
+F:\代码\c++\作业\1234\源.cpp(6,7): message : 参见“GoodClass”的声明
+F:\代码\c++\作业\1234\源.cpp(26,45): error C2440: “<function-style-cast>”: 无法从“initializer list”转换为“GoodClass”
+F:\代码\c++\作业\1234\源.cpp(26,45): message : 无构造函数可以接受源类型，或构造函数重载决策不明确
+F:\代码\c++\作业\1234\源.cpp(27,45): error C2440: “<function-style-cast>”: 无法从“initializer list”转换为“GoodClass”
+F:\代码\c++\作业\1234\源.cpp(27,45): message : 无构造函数可以接受源类型，或构造函数重载决策不明确
+F:\代码\c++\作业\1234\源.cpp(28,45): error C2440: “<function-style-cast>”: 无法从“initializer list”转换为“GoodClass”
+F:\代码\c++\作业\1234\源.cpp(28,45): message : 无构造函数可以接受源类型，或构造函数重载决策不明确
+F:\代码\c++\作业\1234\源.cpp(33,4): error C2146: 语法错误: 缺少“;”(在标识符“abort”的前面)

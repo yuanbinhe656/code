@@ -1,0 +1,3 @@
+﻿  bind.cpp
+E:\BaiduSyncdisk\代码\c++\C++11\bind\bind\bind.cpp(131,11): error C2100: 非法的间接寻址
+E:\BaiduSyncdisk\代码\c++\C++11\bind\bind\bind.cpp(131,8): error C2088: “<<”: 对于 class 非法
