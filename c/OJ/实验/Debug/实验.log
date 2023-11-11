@@ -1,0 +1,5 @@
+﻿  源.cpp
+F:\代码\c\OJ\实验\源.cpp(56,14): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+F:\代码\c\OJ\实验\源.cpp(75,14): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+F:\代码\c\OJ\实验\源.cpp(13,2): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+F:\代码\c\OJ\实验\源.cpp(16,3): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
