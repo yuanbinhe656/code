@@ -1,0 +1,5 @@
+﻿  分区管理.cpp
+E:\BaiduSyncdisk\代码\操作系统\实验\实验三\分区管理\分区管理\分区管理.cpp(526,8): warning C4101: “size”: 未引用的局部变量
+E:\BaiduSyncdisk\代码\操作系统\实验\实验三\分区管理\分区管理\分区管理.cpp(356): warning C4715: “goodmaster::addwork”: 不是所有的控件路径都返回值
+E:\BaiduSyncdisk\代码\操作系统\实验\实验三\分区管理\分区管理\分区管理.cpp(206): warning C4715: “firstmaster::addwork”: 不是所有的控件路径都返回值
+  分区管理.vcxproj -> E:\BaiduSyncdisk\代码\操作系统\实验\实验三\分区管理\x64\Debug\分区管理.exe

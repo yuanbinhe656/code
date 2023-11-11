@@ -1,0 +1,39 @@
+Microsoft (R) Macro Assembler Version 5.00                  11/17/22 22:27:17
+                                                             Page     1-1
+
+
+       1				assume cs:codesg 
+       2 0000				codesg segment 
+       3 0000				start:  
+       4 0000  B8 1234				mov ax,1234h 
+       5				 
+       6 0003  CD 21			          int 21h 
+       7 0005				codesg ENDS 
+       8				    END start 
+Microsoft (R) Macro Assembler Version 5.00                  11/17/22 22:27:17
+                                                             Symbols-1
+
+
+Segments and Groups:
+
+                N a m e         	Length	 Align	Combine Class
+
+CODESG . . . . . . . . . . . . .  	0005	PARA	NONE	
+
+Symbols:            
+
+                N a m e         	Type	 Value	 Attr
+
+START  . . . . . . . . . . . . .  	L NEAR	0000	CODESG
+
+@FILENAME  . . . . . . . . . . .  	TEXT  ass		
+
+
+      8 Source  Lines
+      8 Total   Lines
+      4 Symbols
+
+  50690 + 465854 Bytes symbol space free
+
+      0 Warning Errors
+      0 Severe  Errors

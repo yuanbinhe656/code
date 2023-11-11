@@ -1,0 +1,3 @@
+﻿  实验二.cpp
+E:\云文件\BaiduNetdiskWorkspace\代码\操作系统\实验\实验二\实验二\实验二.cpp(57,23): warning C4244: “=”: 从“time_t”转换到“int”，可能丢失数据
+  实验二.vcxproj -> E:\云文件\BaiduNetdiskWorkspace\代码\操作系统\实验\实验二\实验二\x64\Debug\实验二.exe
