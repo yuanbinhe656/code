@@ -1,0 +1,612 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0054)http://www.manongjc.com/detail/14-fapcmlrjomkkofc.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识    - 码农教程</title>
+<meta name="description" content="本文章向大家介绍关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识   ，主要包括关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识   使用实例、应用技巧、基本知识点总结和需要注意事项，具有一定的参考价值，需要的朋友可以参考一下。"><link rel="stylesheet" type="text/css" href="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/style.css">
+<script src="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/f.txt"></script><script src="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/f(1).txt" id="google_shimpl"></script><script type="text/javascript" async="" src="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/auto_dup"></script><script src="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/push.js"></script><script src="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/hm.js"></script><script type="text/javascript" async="" src="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/vcnm"></script><script type="text/javascript" src="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/static.js"></script>
+<script type="text/javascript" src="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/highlight.js"></script>
+	<link rel="stylesheet" type="text/css" href="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/xcode.css">
+	<script>hljs.initHighlightingOnLoad();</script><script async="" src="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/f(2).txt"></script>
+<script type="text/javascript" src="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/cm.js" async="async" defer="defer"></script>
+<link rel="shortcut icon" type="image/x-icon" href="http://www.manongjc.com/favicon.ico" media="screen">
+<meta http-equiv="origin-trial" content="A0VQgOQvA+kwCj319NCwgf8+syUgEQ8/LLpB8RxxlRC3AkJ9xx8IAvVuQ/dcwy0ok7sGKufLLu6WhsXbQR9/UwwAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjg4MDgzMTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A6kRo9zXJhOvsR4D/VeZ9CiApPAxnOGzBkW88d8eIt9ex2oOzlX+AoUk/BS50Y9Ysy2jwyHR49Mb7XwP+l9yygIAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjg4MDgzMTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A3mbHZoS4VJtJ8j1aE8+Z9vaGf/oMV1eTNIWMrvGqWgNnOmvaxnRGliqKIZU2eiTzCj5Qpz8B1/UTTLuony5bAAAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjg4MDgzMTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><link rel="preload" href="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/f(3).txt" as="script"><script type="text/javascript" src="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/f(3).txt"></script><link rel="preload" href="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/f(3).txt" as="script"><script type="text/javascript" src="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/f(3).txt"></script><link rel="preload" href="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/f(3).txt" as="script"><script type="text/javascript" src="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/f(3).txt"></script><link rel="preload" href="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/f(3).txt" as="script"><script type="text/javascript" src="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/f(3).txt"></script><link rel="preload" href="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/f(3).txt" as="script"><script type="text/javascript" src="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/f(3).txt"></script></head>
+<body>
+<div class="page-content">
+	<div class="header">
+		<div class="logo">
+			<a href="http://www.manongjc.com/"><img alt="码农教程,码农编程入门网" src="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/logo.gif"></a>
+		</div>
+		<div class="header-ads">
+		</div>
+		<div class="search">
+			<div class="search-contain">
+			<div id="bdcs">
+	<div class="bdcs-container">
+		<meta http-equiv="x-ua-compatible" content="IE=9">   <!-- 嵌入式 -->  
+		<div class="bdcs-main bdcs-clearfix" id="default-searchbox">      
+			<div class="bdcs-search bdcs-clearfix" id="bdcs-search-inline">          
+				<form action="http://zhannei.baidu.com/cse/search" method="get" target="_blank" class="bdcs-search-form" autocomplete="off" id="bdcs-search-form">              
+					<input type="hidden" name="s" value="1873544121090210198">              
+					<input type="hidden" name="entry" value="1">                                                                        
+					<input type="text" name="q" class="bdcs-search-form-input" id="bdcs-search-form-input" placeholder="请输入关键词" style="height: 34px; line-height: 34px;">              
+					<input type="submit" class="bdcs-search-form-submit " id="bdcs-search-form-submit" value="搜索">                       
+				</form>      
+			</div>                  
+		</div>                           
+	</div>
+</div>
+			</div>
+		</div>
+		<div class="break"> </div>
+	</div>
+	<div class="menu">
+		<ul>
+			<li><a title="码农教程首页" href="http://www.manongjc.com/" class="hide first"><b>首页</b></a>
+			</li>
+			<li><a title="JAVA教程" href="http://www.manongjc.com/java/java_tutorial.html" class="hide"><b>JAVA</b></a>
+			</li>
+            <li><a title="PHP教程" href="http://www.manongjc.com/php/php_tutorial.html" class="hide"><b>PHP</b></a>
+			</li>
+            <li><a title="HTML教程" href="http://www.manongjc.com/html/html_tutorial.html" class="hide"><b>HTML</b></a>
+			</li>
+            <li><a title="CSS教程" href="http://www.manongjc.com/css/css_tutorial.html" class="hide"><b>CSS</b></a>
+			</li>
+            <li><a title="CSS3教程" href="http://www.manongjc.com/css3/css3_tutorial.html" class="hide"><b>CSS3</b></a>
+			</li>
+            <li><a title="JAVASCRIPT教程" href="http://www.manongjc.com/javascript/javascript_tutorial.html" class="hide"><b>JAVASCRIPT</b></a>
+			</li>
+            <li><a title="Sass教程" href="http://www.manongjc.com/sass/sass_tutorial.html" class="hide"><b>Sass</b></a>
+			</li>
+            <li><a title="MYSQL教程" href="http://www.manongjc.com/mysql_basic/mysql-tutorial-basic.html" class="hide"><b>MYSQL</b></a>
+			</li>
+            <li><a title="SQL教程" href="http://www.manongjc.com/sql/sql_tutorial.html" class="hide"><b>SQL</b></a>
+			</li>
+            <li><a title="PL/SQL教程" href="http://www.manongjc.com/oracle/pl-sql-tutorial.html" class="hide"><b>PL/SQL</b></a>
+			</li>
+            <li><a title="SQLite教程" href="http://www.manongjc.com/sqlite/sqlite_tutorial.html" class="hide"><b>SQLITE</b></a>
+			</li>
+            <li><a title="Redis教程" href="http://www.manongjc.com/redis/redis_tutorial.html" class="hide"><b>REDIS</b></a>
+			</li>
+		</ul>
+		<div class="break"> </div>
+	</div>
+	<div class="breadcrumbs"><a href="http://www.manongjc.com/" class="title">首页</a>&nbsp;&gt;&nbsp;<a href="http://www.manongjc.com/biji" class="title">编程笔记</a>&nbsp;&gt;&nbsp;<a class="title" href="http://www.manongjc.com/category/6.html">其他</a>&nbsp;&gt;&nbsp;关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识   </div>
+	<div class="main-content" style="height: auto !important;">
+		<div class="left" style="height: auto !important;">
+			<div class="first-left" style="height: auto !important;">
+				<div class="left-content" style="height: auto !important;">
+					<div class="article-title"><h1>关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识   </h1></div>
+					<div class="info">时间:2020-01-09					</div>
+					<div id="ads_under_title"><ins class="adsbygoogle common_ad_class" style="display: inline-block; width: 728px; height: 90px;" data-ad-client="ca-pub-9401041403549801" data-ad-slot="4032144190" data-full-width-responsive="true" data-adsbygoogle-status="done" data-ad-status="unfilled"><div id="aswift_0_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 90px; width: 728px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:728px;height:90px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/ads.html" data-google-container-id="a!1" data-google-query-id="CPT8yvPnxP4CFaSH6QUdFDgERw" data-load-complete="true"></iframe></div></ins></div>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>					<div class="intro">本文章向大家介绍关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识   ，主要包括关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识   使用实例、应用技巧、基本知识点总结和需要注意事项，具有一定的参考价值，需要的朋友可以参考一下。</div>					<div class="article-content" id="code_example" style="height: auto !important;">
+						<div id="article_left_top_banner"><!-- article_left_top_banner -->
+<ins class="adsbygoogle common_ad_class" style="display: inline-block; width: 728px; height: 90px;" data-ad-client="ca-pub-9401041403549801" data-ad-slot="1516503570" data-adsbygoogle-status="done" data-ad-status="unfilled"><div id="aswift_1_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 90px; width: 728px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:90px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/ads(1).html" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="COCcy_PnxP4CFS6I6QUdj78Gvw"></iframe></div></ins></div>
+<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+</script>                        
+    
+
+<p><span style="font-size: 14pt;">原文作者：aircraft</span></p>
+<p><span style="font-size: 14pt;">原文链接：<a href="https://www.cnblogs.com/DOMLX/p/12166896.html" target="_blank">https://www.cnblogs.com/DOMLX/p/12166896.html</a></span></p>
+
+
+<p><span style="border-block: unset; border-inline: unset; border-start-start-radius: unset; border-start-end-radius: unset; border-end-start-radius: unset; border-end-end-radius: unset; overflow-inline: unset; overflow-block: unset; margin-block: unset; margin-inline: unset; scroll-margin-block: unset; scroll-margin-inline: unset; padding-block: unset; padding-inline: unset; scroll-padding-block: unset; scroll-padding-inline: unset; inset-block: unset; inset-inline: unset; block-size: unset; min-block-size: unset; max-block-size: unset; inline-size: unset; min-inline-size: unset; max-inline-size: unset; background: unset; background-blend-mode: unset; border: unset; border-radius: unset; box-decoration-break: unset; -moz-float-edge: unset; display: unset; position: fixed; float: unset; clear: unset; vertical-align: unset; overflow: unset; overflow-anchor: unset; transition: unset; animation: unset; transform: unset; scroll-behavior: unset; scroll-snap-align: unset; scroll-snap-type: unset; overscroll-behavior: unset; isolation: unset; break-after: unset; break-before: unset; break-inside: unset; resize: unset; perspective: unset; perspective-origin: unset; backface-visibility: unset; transform-box: unset; transform-style: unset; transform-origin: unset; contain: unset; -moz-appearance: unset; -moz-orient: unset; will-change: unset; shape-image-threshold: unset; shape-margin: unset; shape-outside: unset; touch-action: unset; -webkit-line-clamp: unset; columns: unset; column-fill: unset; column-rule: unset; column-span: unset; content: unset; counter-increment: unset; counter-reset: unset; counter-set: unset; opacity: unset; box-shadow: unset; clip: rect(0px, 0px, 0px, 0px); filter: unset; mix-blend-mode: unset; font: unset; font-synthesis: unset; visibility: unset; writing-mode: unset; text-orientation: unset; color-adjust: unset; image-rendering: unset; image-orientation: unset; dominant-baseline: unset; text-anchor: unset; color-interpolation: unset; color-interpolation-filters: unset; fill: unset; fill-opacity: unset; fill-rule: unset; shape-rendering: unset; stroke: unset; stroke-width: unset; stroke-linecap: unset; stroke-linejoin: unset; stroke-miterlimit: unset; stroke-opacity: unset; stroke-dasharray: unset; stroke-dashoffset: unset; clip-rule: unset; marker: unset; paint-order: unset; -moz-context-properties: unset; border-collapse: unset; empty-cells: unset; caption-side: unset; border-spacing: unset; color: unset; text-transform: unset; hyphens: unset; -moz-text-size-adjust: unset; text-indent: unset; overflow-wrap: unset; word-break: unset; text-justify: unset; text-align-last: unset; text-align: unset; letter-spacing: unset; word-spacing: unset; white-space: pre; text-shadow: unset; text-emphasis: unset; text-emphasis-position: unset; -moz-tab-size: unset; line-break: unset; -webkit-text-fill-color: unset; -webkit-text-stroke: unset; ruby-align: unset; ruby-position: unset; text-combine-upright: unset; text-rendering: unset; -moz-control-character-visibility: unset; text-underline-offset: unset; text-decoration-skip-ink: unset; cursor: unset; pointer-events: unset; -moz-user-input: unset; -moz-user-modify: unset; -moz-user-focus: unset; caret-color: unset; scrollbar-color: unset; list-style: unset; quotes: unset; -moz-image-region: unset; margin: unset; scroll-margin: unset; outline: unset; -moz-outline-radius: unset; outline-offset: unset; padding: unset; scroll-padding: unset; top: 0px; right: unset; bottom: unset; left: unset; z-index: unset; flex-flow: unset; place-content: unset; place-items: unset; flex: unset; place-self: unset; order: unset; width: unset; min-width: unset; max-width: unset; height: unset; min-height: unset; max-height: unset; box-sizing: unset; object-fit: unset; object-position: unset; grid-area: unset; grid: unset; gap: unset; vector-effect: unset; stop-color: unset; stop-opacity: unset; flood-color: unset; flood-opacity: unset; lighting-color: unset; mask-type: unset; clip-path: unset; mask: unset; x: unset; y: unset; cx: unset; cy: unset; rx: unset; ry: unset; r: unset; table-layout: unset; text-overflow: unset; text-decoration: unset; ime-mode: unset; scrollbar-width: unset; user-select: text; -moz-window-dragging: unset; -moz-force-broken-image-icon: unset; -moz-box-align: unset; -moz-box-direction: unset; -moz-box-flex: unset; -moz-box-orient: unset; -moz-box-pack: unset; -moz-stack-sizing: unset; -moz-box-ordinal-group: unset;">为什么引入齐次坐标的变换矩阵可以表示平移呢？ - Yu Mao的回答 - 知乎 https://www.zhihu.com/question/26655998/answer/43847213</span><span style="border-block: unset; border-inline: unset; border-start-start-radius: unset; border-start-end-radius: unset; border-end-start-radius: unset; border-end-end-radius: unset; overflow-inline: unset; overflow-block: unset; margin-block: unset; margin-inline: unset; scroll-margin-block: unset; scroll-margin-inline: unset; padding-block: unset; padding-inline: unset; scroll-padding-block: unset; scroll-padding-inline: unset; inset-block: unset; inset-inline: unset; block-size: unset; min-block-size: unset; max-block-size: unset; inline-size: unset; min-inline-size: unset; max-inline-size: unset; background: unset; background-blend-mode: unset; border: unset; border-radius: unset; box-decoration-break: unset; -moz-float-edge: unset; display: unset; position: fixed; float: unset; clear: unset; vertical-align: unset; overflow: unset; overflow-anchor: unset; transition: unset; animation: unset; transform: unset; scroll-behavior: unset; scroll-snap-align: unset; scroll-snap-type: unset; overscroll-behavior: unset; isolation: unset; break-after: unset; break-before: unset; break-inside: unset; resize: unset; perspective: unset; perspective-origin: unset; backface-visibility: unset; transform-box: unset; transform-style: unset; transform-origin: unset; contain: unset; -moz-appearance: unset; -moz-orient: unset; will-change: unset; shape-image-threshold: unset; shape-margin: unset; shape-outside: unset; touch-action: unset; -webkit-line-clamp: unset; columns: unset; column-fill: unset; column-rule: unset; column-span: unset; content: unset; counter-increment: unset; counter-reset: unset; counter-set: unset; opacity: unset; box-shadow: unset; clip: rect(0px, 0px, 0px, 0px); filter: unset; mix-blend-mode: unset; font: unset; font-synthesis: unset; visibility: unset; writing-mode: unset; text-orientation: unset; color-adjust: unset; image-rendering: unset; image-orientation: unset; dominant-baseline: unset; text-anchor: unset; color-interpolation: unset; color-interpolation-filters: unset; fill: unset; fill-opacity: unset; fill-rule: unset; shape-rendering: unset; stroke: unset; stroke-width: unset; stroke-linecap: unset; stroke-linejoin: unset; stroke-miterlimit: unset; stroke-opacity: unset; stroke-dasharray: unset; stroke-dashoffset: unset; clip-rule: unset; marker: unset; paint-order: unset; -moz-context-properties: unset; border-collapse: unset; empty-cells: unset; caption-side: unset; border-spacing: unset; color: unset; text-transform: unset; hyphens: unset; -moz-text-size-adjust: unset; text-indent: unset; overflow-wrap: unset; word-break: unset; text-justify: unset; text-align-last: unset; text-align: unset; letter-spacing: unset; word-spacing: unset; white-space: pre; text-shadow: unset; text-emphasis: unset; text-emphasis-position: unset; -moz-tab-size: unset; line-break: unset; -webkit-text-fill-color: unset; -webkit-text-stroke: unset; ruby-align: unset; ruby-position: unset; text-combine-upright: unset; text-rendering: unset; -moz-control-character-visibility: unset; text-underline-offset: unset; text-decoration-skip-ink: unset; cursor: unset; pointer-events: unset; -moz-user-input: unset; -moz-user-modify: unset; -moz-user-focus: unset; caret-color: unset; scrollbar-color: unset; list-style: unset; quotes: unset; -moz-image-region: unset; margin: unset; scroll-margin: unset; outline: unset; -moz-outline-radius: unset; outline-offset: unset; padding: unset; scroll-padding: unset; top: 0px; right: unset; bottom: unset; left: unset; z-index: unset; flex-flow: unset; place-content: unset; place-items: unset; flex: unset; place-self: unset; order: unset; width: unset; min-width: unset; max-width: unset; height: unset; min-height: unset; max-height: unset; box-sizing: unset; object-fit: unset; object-position: unset; grid-area: unset; grid: unset; gap: unset; vector-effect: unset; stop-color: unset; stop-opacity: unset; flood-color: unset; flood-opacity: unset; lighting-color: unset; mask-type: unset; clip-path: unset; mask: unset; x: unset; y: unset; cx: unset; cy: unset; rx: unset; ry: unset; r: unset; table-layout: unset; text-overflow: unset; text-decoration: unset; ime-mode: unset; scrollbar-width: unset; user-select: text; -moz-window-dragging: unset; -moz-force-broken-image-icon: unset; -moz-box-align: unset; -moz-box-direction: unset; -moz-box-flex: unset; -moz-box-orient: unset; -moz-box-pack: unset; -moz-stack-sizing: unset; -moz-box-ordinal-group: unset;">为什么引入齐次坐标的变换矩阵可以表示平移呢？ - Yu Mao的回答 - 知乎 https://www.zhihu.com/question/26655998/answer/43847213</span></p>
+<p><span style="font-size: 16px;"><span style="font-family: 宋体;">在</span>opengl<span style="font-family: 宋体;">里面涉及到了许多的计算机图形学的知识，当然也涉及到了许多矩阵运算类的知识，基本都是在线性代数里面学过的。</span></span></p>
+<p><span style="font-size: 16px;">&nbsp;</span></p>
+<p><span style="font-size: 16px;"><span style="font-family: 宋体;">就比如</span>opengl<span style="font-family: 宋体;">里面的平移函数</span><strong>glTranslatef</strong><strong><span style="font-family: 宋体;">（</span></strong><strong>x,y,z</strong><strong><span style="font-family: 宋体;">）</span></strong><span style="font-family: 宋体;">，</span></span></p>
+<p><span style="font-size: 16px;"><span style="font-family: 宋体;">其作用就是将你绘点坐标的原点在当前原点的基础上平移一个</span>(x,y,z)<span style="font-family: 宋体;">向量。</span></span></p>
+<p><span style="font-family: 宋体; font-size: 16px;">就是让当前点与一个平移矩阵相乘来求得最终矩阵，来进行平移</span></p>
+<p><span style="font-size: 16px;">&nbsp;</span></p>
+<p><span style="font-family: 宋体; font-size: 16px;">那么就要先从矩阵乘法开始</span></p>
+<p>&nbsp;<strong><span style="font-size: 18pt;">一.<span style="font-family: 宋体;">矩阵乘法：</span></span></strong></p>
+<p class="p"><span style="font-size: 16px;"><span style="font-family: 宋体;">若要把矩阵与</span><strong><span style="font-family: 宋体;">矩阵</span></strong><span style="font-family: 宋体;">相乘，我们要计算行与列的</span>"<a href="https://www.shuxuele.com/algebra/vectors-dot-product.html"><span style="text-decoration: underline;"><span style="font-family: 宋体;">点积</span></span></a>"……<span style="font-family: 宋体;">这是什么意思？我们来看个例子：</span></span></p>
+<p class="p"><span style="font-size: 16px;"><span style="font-family: 宋体;">求</span>&nbsp;<strong><span style="font-family: 宋体;">第一行</span></strong>&nbsp;<span style="font-family: 宋体;">和</span><span style="font-family: Calibri;">&nbsp;</span><strong><span style="font-family: 宋体;">第一列</span></strong>&nbsp;<span style="font-family: 宋体;">的答案：</span></span></p>
+<p class="p"><span style="font-size: 16px;">&nbsp;</span></p>
+
+
+<p><span style="font-size: 16px;">&nbsp;</span></p>
+<p class="p"><span style="font-size: 16px;">"<span style="font-family: 宋体;">点积</span><span style="font-family: Calibri;">" </span><span style="font-family: 宋体;">是把</span><span style="font-family: Calibri;">&nbsp;</span><strong><span style="font-family: 宋体;">对称的元素相乘</span></strong><span style="font-family: 宋体;">，然后把结果加起来：</span></span></p>
+<p class="p"><span style="font-size: 16px;">(1, 2, 3) • (7, 9, 11) = 1×7 + 2×9 + 3×11 = 58</span></p>
+<p class="p"><span style="font-size: 16px;"><span style="font-family: 宋体;">我们把第一个元素相配（</span>1 <span style="font-family: 宋体;">和 </span><span style="font-family: Calibri;">7</span><span style="font-family: 宋体;">），然后相乘。第二个元素（</span><span style="font-family: Calibri;">2 </span><span style="font-family: 宋体;">和 </span><span style="font-family: Calibri;">9</span><span style="font-family: 宋体;">） 和第三个元素（</span><span style="font-family: Calibri;">3 </span><span style="font-family: 宋体;">和 </span><span style="font-family: Calibri;">11</span><span style="font-family: 宋体;">）也一样，然后把结果加起来。</span></span></p>
+<p class="p"><span style="font-size: 16px;"><span style="font-family: 宋体;">想多看一个例子？这是第一行与</span><strong><span style="font-family: 宋体;">第二列</span></strong><span style="font-family: 宋体;">：</span></span></p>
+<p class="p"><span style="font-size: 16px;">&nbsp;</span></p>
+
+
+<p><span style="font-size: 16px;">&nbsp;</span></p>
+<p class="p"><span style="font-size: 16px;">(1, 2, 3) • (8, 10, 12) = 1×8 + 2×10 + 3×12 = 64</span></p>
+<p class="p"><span style="font-size: 16px;"><strong><span style="font-family: 宋体;">第二行</span></strong>&nbsp;<span style="font-family: 宋体;">和</span><span style="font-family: Calibri;">&nbsp;</span><strong><span style="font-family: 宋体;">第一列</span></strong><span style="font-family: 宋体;">也同样做：</span></span></p>
+<p class="p"><span style="font-size: 16px;">(4, 5, 6) • (7, 9, 11) = 4×7 + 5×9 + 6×11 = 139</span></p>
+<p class="p"><span style="font-size: 16px;"><strong><span style="font-family: 宋体;">第二行</span></strong>&nbsp;<span style="font-family: 宋体;">和</span><span style="font-family: Calibri;">&nbsp;</span><strong><span style="font-family: 宋体;">第二列</span></strong><span style="font-family: 宋体;">：</span></span></p>
+<p class="p"><span style="font-size: 16px;">(4, 5, 6) • (8, 10, 12) = 4×8 + 5×10 + 6×12 = 154</span></p>
+<p class="p"><span style="font-family: 宋体; font-size: 16px;">我们得到：</span></p>
+<p class="p"><span style="font-size: 16px;">&nbsp;</span></p>
+
+
+<p><span style="font-size: 16px;">&nbsp;</span></p>
+<p><strong><span style="font-size: 18pt;">二.矩阵的线性变换以及glTranslatef(x,y,z)函数详解</span></strong></p>
+<p><span style="font-size: 16px;">　　对于opengl的glTranslatef(x,y,z)函数就是依靠线性变换来进行平移操作的，</span></p>
+<p><span style="font-size: 16px;"><span style="font-family: 宋体;">其作用就是将你绘点坐标的原点在当前原点的基础上平移一个(x,y,z)<span style="font-family: 宋体;">向量。</span></span></span></p>
+<p><span style="font-family: 宋体; font-size: 16px;">就是让当前点与一个平移矩阵相乘来求得最终矩阵，来进行平移</span></p>
+<p><span style="font-size: 16px;">&nbsp;</span></p>
+<div class="para"><span style="font-size: 16px;">任意线性变换都可以用矩阵表示为易于计算的一致形式，并且多个变换也可以很容易地通过矩阵的相乘连接在一起<sup>。</sup><a name="ref_2"></a></span></div>
+<div class="para"><span style="font-size: 16px;">线性变换不是唯一可以用矩阵表示的变换。<strong>R</strong>维的<a href="https://baike.baidu.com/item/%E4%BB%BF%E5%B0%84%E5%8F%98%E6%8D%A2" target="_blank">仿射变换</a>与透视投影都可以用<a href="https://baike.baidu.com/item/%E9%BD%90%E6%AC%A1%E5%9D%90%E6%A0%87" target="_blank">齐次坐标</a>表示为<strong>RP</strong>维（即<em>n</em>+1 维的真实投影空间）的线性变换。因此，在三维计算机图形学中大量使用着 4x4 的<a href="https://baike.baidu.com/item/%E7%9F%A9%E9%98%B5%E5%8F%98%E6%8D%A2" target="_blank">矩阵变换</a>。</span></div>
+<div class="para"><span style="font-size: 16px;">　　在opengl中就经常用到<span style="font-family: 宋体;"><span style="font-size: 16px;">仿射变换</span></span>的形式。</span></div>
+<p class="p"><span style="font-family: 宋体;">　　<span style="font-size: 16px;">仿射变换：为了表示仿射变换，需要使用齐次坐标，即用三向量 (<em>x</em>,<em>y</em>, 1) 表示二向量，对于高维来说也是如此。按照这种方法，就可以用<a href="https://baike.baidu.com/item/%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95" target="_blank">矩阵乘法</a>表示变换。规定：<em>x</em>' =<em>x</em>+<em>t</em><em>x</em>;<em>y</em>' =<em>y</em>+<em>t</em><em>y。</em>在矩阵中增加一列与一行，除右下角的元素为 1 外其它部分填充为 0，通过这种方法，所有的线性变换都可以转换为仿射变换。通过这种方法，使用与前面一样的矩阵乘积可以将各种变换无缝地集成到一起。当使用仿射变换时，其次坐标<a href="https://baike.baidu.com/item/%E5%90%91%E9%87%8F" target="_blank">向量</a><em>w</em>从来不变，这样可以把它当作为 1。</span></span><span style="font-family: 宋体; font-size: 16px;">　</span></p>
+<p style="font-family: &#39;-apple-system&#39;, &#39;SF UI Text&#39;, Arial, &#39;PingFang SC&#39;, &#39;Hiragino Sans GB&#39;, &#39;Microsoft YaHei&#39;, &#39;WenQuanYi Micro Hei&#39;, sans-serif, SimHei, SimSun;"><span style="font-size: 16px;">　　在矩阵的初等变换中，矩阵的左乘代表着行变换，TA=B。&nbsp;</span><br><span style="font-size: 16px;">矩阵的右乘相当于列变换， AT=C。</span></p>
+
+<p style="font-family: &#39;-apple-system&#39;, &#39;SF UI Text&#39;, Arial, &#39;PingFang SC&#39;, &#39;Hiragino Sans GB&#39;, &#39;Microsoft YaHei&#39;, &#39;WenQuanYi Micro Hei&#39;, sans-serif, SimHei, SimSun;"><span style="font-size: 16px;">　　当三维坐标发生旋转、平移时，就需要考虑到矩阵是左乘还是右乘。&nbsp;</span><br><span style="font-size: 16px;">设有旋转矩阵R，平移矩阵T， 坐标矩阵A。</span></p>
+<p class="p"><span style="font-family: 宋体;"><span style="font-size: 16px;">
+-<span style="font-weight: bold;">若是绕着静态的世界坐标系旋转，有RA，即左乘旋转矩阵&nbsp;<br>-&nbsp;</span><span style="font-weight: bold;"><span style="font-weight: bold;">若是绕着动态的自身坐标系旋转，有A’R’， 即右乘旋转矩阵</span></span></span><span style="font-size: 16px;"><span style="font-weight: bold;"><span style="font-weight: bold;"> <br></span></span></span></span></p><div class="google-auto-placed ap_container" style="width: 100%; height: auto; clear: both; text-align: center;"><ins data-ad-format="auto" class="adsbygoogle adsbygoogle-noablate" data-ad-client="ca-pub-9401041403549801" data-adsbygoogle-status="done" style="display: block; margin: auto; background-color: transparent; height: 0px;" data-ad-status="unfilled"><div id="aswift_6_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 0px; width: 888px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: hidden; opacity: 0;"><iframe id="aswift_6" name="aswift_6" style="left: 0px; position: absolute; top: 0px; border: 0px; width: 888px; height: 0px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="888" height="0" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/ads(2).html" data-google-container-id="a!7" data-load-complete="true" data-google-query-id="CL6m3_PnxP4CFRmE6QUd6M0L7g"></iframe></div></ins></div>
+
+<p class="p"><span style="font-family: 宋体;"><span style="font-size: 16px;">这个意思就是 我们先glTranslatef(x,y,z)移动后旋转的话，那么就是物体先移动 然后绕着自身旋转也是绕自身坐标系旋转。先旋转 在移动 那么就是绕世界坐标系旋转了</span></span></p>
+<p class="p"><span style="font-family: 宋体;"><span style="font-size: 16px;">　　好接下来介绍一下矩阵平移</span></span></p>
+
+<p class="p"><strong><span style="font-family: 宋体; font-size: 14pt;">举个二维点移动的例子：</span></strong></p>
+<p><span style="font-size: 16px;">设某点向x方向移动&nbsp;dx,&nbsp;y方向移动&nbsp;dy&nbsp;,[x,y]为变换前坐标，&nbsp;[X,Y]为变换后坐标。</span></p>
+
+<p><span style="font-size: 16px;">则&nbsp;X&nbsp;=&nbsp;x+dx;&nbsp;&nbsp;Y&nbsp;=&nbsp;y+dy;</span></p>
+<p class="p"><span style="font-family: 宋体;"><span style="font-size: 16px;">&nbsp;</span></span></p>
+<p class="p"><span style="font-family: 宋体;"><span style="font-size: 16px;">然后其中的矩阵运算过程是：我们先将（x,y）点坐标转化为其次坐标（x,y,1）这是在计算机图形学中经常用到的（不知道为什么要转换为齐次坐标后面会讲）</span></span></p>
+<p class="p"><span style="font-family: 宋体;"><span style="font-size: 16px;">那么就可以得到：</span></span></p>
+
+
+
+<p><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [ 1&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;0 ]</span></p>
+
+<p><span style="font-size: 18px;">[X,&nbsp;Y,&nbsp;1]&nbsp;=&nbsp;[x,&nbsp;y,&nbsp;1][&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;0 ]&nbsp;;&nbsp;</span></p>
+
+<p><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [ dx&nbsp;&nbsp;dy&nbsp; 1 ]</span></p>
+
+<p><span style="font-size: 18px;">这个时候X = x+dx;&nbsp; Y = y + dy； 是不是就实现了坐标的移动？？？</span></p>
+<p><span style="font-size: 18px;">hhhh&nbsp;&nbsp;&nbsp; 没看懂的话把上面的矩阵乘法在看一次 动动手，写两笔就出来的东西不要一直想</span></p>
+
+<p><span style="font-size: 18px;"><strong><span style="font-family: 宋体; font-size: 14pt;">那么在举个三维点移动的例子：</span></strong></span></p>
+<p><span style="font-size: 18px;"><strong><span style="font-family: 宋体; font-size: 14pt;">同样的 先<span style="font-family: 宋体;"><span style="font-size: 16px;">（x,y，z）点坐标转化为其次坐标（x,y,z,1） 然后变换后的（X，Y，Z）不就是等于<span style="font-size: 18px;"><strong><span style="font-family: 宋体; font-size: 14pt;"><span style="font-family: 宋体;"><span style="font-size: 16px;">（x,y,z,1）</span></span></span></strong></span>乘以下图的变换矩阵吗？？？</span></span></span></strong></span></p>
+<p><span style="font-size: 18px;"><strong><span style="font-family: 宋体; font-size: 14pt;"></span></strong></span></p>
+
+
+
+<p><span style="font-size: 16px;">动动手用矩阵乘法得出：</span><span style="font-size: 18px;">X = x+dx;&nbsp; Y = y + dy；Z = z + dz;&nbsp;&nbsp;&nbsp; 不就移动好了吗？？？？</span></p>
+
+<p><span style="font-size: 18px;">需要特别注意的是在opengl中<code>的矩阵采用列优先存储，矩阵表示如下</code></span></p>
+
+
+
+
+
+<p><strong><span style="font-size: 14pt;">那么刚才为什么要转化齐次坐标？？</span></strong></p>
+<p><span style="font-size: 16px;">我们可以看这篇博客：<a href="https://www.cnblogs.com/csyisong/archive/2008/12/09/1351372.html" target="_blank">其次坐标的理解</a></span></p>
+<p><span style="font-size: 16px;">我摘抄主要的部分在下面了：</span></p>
+<p><span style="font-size: 16px;"><em><span style="font-family: 宋体;">“齐次坐标表示是计算机图形学的重要手段之一，它既能够用来明确区分向量和点，同时也更易用于进行仿射（线性）几何变换</span></em></span></p>
+
+<p>对于一个<em>向量</em><strong><span style="font-family: Times New Roman;">v</span></strong>以及基<strong><span style="font-family: Times New Roman;">oabc</span></strong>，<span style="font-size: medium;">可以找到一组坐标<span style="font-family: Times New Roman;">(v1,v2,v3)</span>，使得</span><span style="font-size: medium;"><span style="font-family: Times New Roman;"><strong>v</strong> = v1 <strong>a</strong> + v2 <strong>b + </strong>v3<strong> c</strong><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</strong></span><strong>（<span style="font-family: Times New Roman;">1</span></strong><strong>）</strong></span></p><div class="google-auto-placed ap_container" style="width: 100%; height: auto; clear: both; text-align: center;"><ins data-ad-format="auto" class="adsbygoogle adsbygoogle-noablate" data-ad-client="ca-pub-9401041403549801" data-adsbygoogle-status="done" style="display: block; margin: auto; background-color: transparent; height: 0px;" data-ad-status="unfilled"><div id="aswift_7_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 0px; width: 888px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: hidden; opacity: 0;"><iframe id="aswift_7" name="aswift_7" style="left: 0px; position: absolute; top: 0px; border: 0px; width: 888px; height: 0px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="888" height="0" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/ads(3).html" data-google-container-id="a!8" data-load-complete="true" data-google-query-id="CJWGyfTnxP4CFYTAfAodCzwB_w"></iframe></div></ins></div>
+<p><strong><span style="font-family: Times New Roman; font-size: medium;">&nbsp;</span></strong><span style="font-size: medium;">而对于一个<em>点</em><strong><span style="font-family: Times New Roman;">p</span></strong>，则可以找到一组坐标（<span style="font-family: Times New Roman;">p1,p2,p3</span>），使得</span><span style="font-family: Times New Roman; font-size: medium;">&nbsp;</span><span style="font-size: medium;"><span style="font-family: Times New Roman;"><strong>p</strong> – <strong>o</strong> = p1 <strong>a + </strong>p2 <strong>b</strong> + p3 <strong>c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></span><strong>（</strong><strong><span style="font-family: Times New Roman;">2</span>），</strong></span></p>
+<p><span style="font-size: medium;">&nbsp;</span></p>
+<p><span style="font-size: medium;">从上面对<em>向量</em>和<em>点</em>的表达，我们可以看出为了在坐标系中表示一个<em>点</em>（如<span style="font-family: Times New Roman;">p</span>），我们把点的位置看作是对这个基的原点<span style="font-family: Times New Roman;">o</span>所进行的一个位移，即一个向量——<span style="font-family: Times New Roman;">p – o</span>（有的书中把这样的向量叫做<em>位置向量</em>——起始于坐标原点的特殊向量），我们在表达这个向量的同时用等价的方式表达出了点<span style="font-family: Times New Roman;">p：<span style="font-size: medium;"><span style="font-family: Times New Roman;"><strong>p </strong>= <strong>o</strong> + p1 <strong>a + </strong>p2 <strong>b</strong> + p3 <strong>c (3)</strong></span></span></span></span></p>
+<p><span style="font-size: medium;"><span style="font-family: Times New Roman;"><span style="font-size: medium;"><span style="font-family: Times New Roman;">&nbsp;</span></span></span></span></p>
+<p><span style="font-size: medium;"><span style="font-family: Times New Roman;">(1)(3)</span>是坐标系下表达一个<em>向量</em>和<em>点</em>的不同表达方式。这里可以看出，虽然都是用代数分量的形式表达向量和点，但表达一个点比一个向量需要额外的信息。如果我写出一个代数分量表达<span style="font-family: Times New Roman;">(1, 4, 7)</span>，谁知道它是个向量还是个点！</span></p>
+<p><span style="font-size: medium;"><span style="font-size: medium;">&nbsp;&nbsp;&nbsp; <span style="font-size: medium;">我们现在把（<span style="font-family: Times New Roman;">1</span>）（<span style="font-family: Times New Roman;">3</span>）写成矩阵的形式：v = (v1 v2 v3 0)&nbsp;X&nbsp;(a b c o)</span></span></span></p>
+<p><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium;">p = (p1 p2 p3 1) X (a b c o),</span></span></span><span style="font-size: medium;">这里<strong><span style="font-family: Times New Roman;">(a,b,c,o)</span></strong>是坐标基矩阵，右边的列向量分别是向量<strong><span style="font-family: Times New Roman;">v</span></strong>和点<strong><span style="font-family: Times New Roman;">p</span></strong>在基下的坐标。</span>这样，向量和点在同一个基下就有了不同的表达：<em><span style="font-family: Times New Roman;">3D</span></em><em>向量</em>的第<span style="font-family: Times New Roman;">4</span>个代数分量是<span style="font-family: Times New Roman;">0</span>，而<em><span style="font-family: Times New Roman;">3D</span></em><em>点</em>的第<span style="font-family: Times New Roman;">4</span>个代数分量是<span style="font-family: Times New Roman;">1</span>。像这种这种用<span style="font-family: Times New Roman;">4</span>个代数分量表示<span style="font-family: Times New Roman;">3D</span>几何概念的方式是一种齐次坐标表示。</span></span></span></p>
+<p><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium;">&nbsp;</span></span></span></p>
+<p><span style="font-size: medium;">这样，上面的<span style="font-family: Times New Roman;">(1, 4, 7)</span>如果写成（<span style="font-family: Times New Roman;">1,4,7,0</span>），它就是个向量；如果是<span style="font-family: Times New Roman;">(1,4,7,1)</span>，它就是个点。</span><span style="font-size: medium;">下面是如何在普通坐标<span style="font-family: Times New Roman;">(Ordinary Coordinate)</span>和齐次坐标<span style="font-family: Times New Roman;">(Homogeneous Coordinate)</span>之间进行转换：</span></p>
+<p><span style="font-size: medium;">(1)从普通坐标转换成齐次坐标时</span></p>
+<p><span style="font-size: medium;">&nbsp;&nbsp; 如果<span style="font-family: Times New Roman;">(x,y,z)</span>是个点，则变为<span style="font-family: Times New Roman;">(x,y,z,1);</span></span></p>
+<p><span style="font-size: medium;">&nbsp;&nbsp; 如果<span style="font-family: Times New Roman;">(x,y,z)</span>是个向量，则变为<span style="font-family: Times New Roman;">(x,y,z,0)</span></span></p>
+<p><span style="font-size: medium;">(2)<span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium;">从齐次坐标转换成普通坐标时</span></span></span></span><span style="font-size: medium;">&nbsp;&nbsp;&nbsp;</span></p>
+<p><span style="font-size: medium;">&nbsp;&nbsp; <span style="font-size: medium;">如果是<span style="font-family: Times New Roman;">(x,y,z,1)</span>，则知道它是个点，变成<span style="font-family: Times New Roman;">(x,y,z);</span></span></span></p>
+<p><span style="font-size: medium;">&nbsp;&nbsp; 如果是<span style="font-family: Times New Roman;">(x,y,z,0)</span>，则知道它是个向量，仍然变成<span style="font-family: Times New Roman;">(x,y,z)</span></span></p>
+
+<p><span style="font-family: Times New Roman; font-size: medium;"><span style="font-size: medium;">以上是通过齐次坐标来区分向量和点的方式。从中可以思考得知，对于平移<span style="font-family: Times New Roman;">T</span>、旋转<span style="font-family: Times New Roman;">R</span>、缩放<span style="font-family: Times New Roman;">S</span>这<span style="font-family: Times New Roman;">3</span>个最常见的仿射变换，平移变换只对于点才有意义，因为普通向量没有位置概念，只有大小和方向.</span></span></p>
+
+<p><span style="font-family: Times New Roman; font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium;">而旋转和缩放对于向量和点都有意义，你可以用类似上面齐次表示来检测。从中可以看出，齐次坐标用于仿射变换非常方便。</span></span></span></p><div class="google-auto-placed ap_container" style="width: 100%; height: auto; clear: both; text-align: center;"><ins data-ad-format="auto" class="adsbygoogle adsbygoogle-noablate" data-ad-client="ca-pub-9401041403549801" data-adsbygoogle-status="done" style="display: block; margin: auto; background-color: transparent; height: 0px;" data-ad-status="unfilled"><div id="aswift_8_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 0px; width: 888px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: hidden; opacity: 0;"><iframe id="aswift_8" name="aswift_8" style="left: 0px; position: absolute; top: 0px; border: 0px; width: 888px; height: 0px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="888" height="0" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/ads(4).html" data-google-container-id="a!9" data-load-complete="true" data-google-query-id="CJTaq_XnxP4CFcHJfAodQr8BKw"></iframe></div></ins></div>
+
+<p><span style="font-size: medium;"><span style="font-size: medium;">此外，对于一个普通坐标的<em>点</em><span style="font-family: Times New Roman;">P=(Px, Py, Pz)</span>，有对应的一族齐次坐标<span style="font-family: Times New Roman;">(wPx, wPy, wPz, w)</span>，其中<span style="font-family: Times New Roman;">w</span>不等于零</span>。比如，<span style="font-family: Times New Roman;">P(1, 4, 7)</span>的齐次坐标有<span style="font-family: Times New Roman;">(1, 4, 7, 1)</span>、（<span style="font-family: Times New Roman;">2, 8, 14, 2</span>）、（<span style="font-family: Times New Roman;">-0.1, -0.4, -0.7, -0.1</span>）等等。因此，如果把一个点从普通坐标变成齐次坐标，给<span style="font-family: Times New Roman;">x,y,z</span>乘上同一个非零数<span style="font-family: Times New Roman;">w</span>，然后增加第<span style="font-family: Times New Roman;">4</span>个分量<span style="font-family: Times New Roman;">w</span>；如果把一个齐次坐标转换成普通坐标，把前三个坐标同时除以第<span style="font-family: Times New Roman;">4</span>个坐标，然后去掉第<span style="font-family: Times New Roman;">4</span>个分量。</span></p>
+
+<p><strong><span style="font-size: 14pt;">&nbsp;<span class="RichText ztext CopyrightRichText-richText">为什么引入齐次坐标可以表示平移？</span></span></strong></p>
+
+<div>
+<div>
+<p><span style="font-size: 16px;">首先我们用一个矢量来表示空间中一个点：</span><br><span style="font-size: 16px;">如果我们要将其平移，平移的矢量为：</span><br><span style="font-size: 16px;">那么正常的做法就是：</span></p>
+<p><span style="font-size: 16px;">如果不引入齐次坐标，单纯采用3X3矩阵乘法来实现平移</span><br><span style="font-size: 16px;">你想做的就是找到一个矩阵，使得</span><br><span style="font-size: 16px;"></span><br><span style="font-size: 16px;">然后你就会发现你永远也找不到这样的矩阵</span></p>
+<p><span style="font-size: 16px;">所以我们需要新引入一个维度，原来</span><br><span style="font-size: 16px;">那么我们可以找到一个4X4的矩阵来实现平移</span><br><span style="font-size: 16px;"></span><br><span style="font-size: 16px;"></span><br><span style="font-size: 16px;"></span><br><span style="font-size: 16px;"></span><br><span style="font-size: 16px;">现在，就有：</span><br><span style="font-size: 16px;"></span></p>
+
+
+</div>
+
+
+</div>
+
+<p><span style="font-size: medium;"><strong><span style="font-size: 18pt;">三.矩阵实现旋转以及glRotatef(angle,x,y,z)函数详解</span></strong></span></p>
+<p><span style="font-size: medium;">　　函数原型：glRotatef(GLfloat angle,GLfloat x,GLfloat y,GLfloat z)<br><br>该函数用来设置opengl中绘制实体的自转方式，即物体如何旋转<br><br>参数说明：<br><br>angle：旋转的角度，单位为度；<br><br>x,y,z表示绕着那个轴旋转，如果取值都为0，则表示默认的绕x轴逆时针旋转。<br><br>x,y为0，z不为0时，表示绕z轴旋转；x,z为0，y不为0时，表示绕y轴旋转；y,z为0，x不为0，表示绕x轴旋转。<br><br>旋转的逆顺时针是通过x，y，z值得正负来确定的：取值为正时，表示逆时针旋转；取值为负时，表示顺时针旋转。<br><br>例：glRotatef(30,0,-1,0)；<br><br>表示绕y轴顺时针方向旋转30度。<br><br>关于逆时针与顺时针，可用右手定则：<br><br>即手握住某个坐标轴，大拇指指向某轴的正方向，其余四个手指的弯曲方向即为绕某轴旋转的逆时针方向；反之为顺时针方向。<br><br></span></p>
+<p><span style="font-size: medium;">&nbsp;</span></p>
+
+<p>&nbsp;<span style="font-size: 16px;">好，看完了函数&nbsp; 我们接下来理解一下矩阵的旋转 当然也包括图形的旋转。。。。</span></p>
+
+<p><span style="font-size: 14pt;">二维极坐标系 情况如下：</span></p>
+<p><span style="font-size: 16px;"></span></p>
+
+
+
+<p><span style="font-size: 16px;">上面是二维的情况，那么我直接想象这是三维的 z轴指向屏幕外，可以上面不就是在三维空间&nbsp; 绕Z轴旋转的情况吗 也就是在XOY面移动&nbsp; 就只改变了x,y坐标&nbsp; <br></span></p>
+
+
+<p><span style="font-size: 16px;">于是可得下面的转换方程</span></p>
+
+<p><span style="font-size: 16px;">（式一）</span></p>
+
+<p><span style="font-size: 16px;">写成矩阵的形式就是（不理解看 第一步的矩阵乘法知识 在不会敲爆你的狗头！！！）</span></p>
+
+<p><span style="font-size: 16px;"></span></p>
+
+<p><span style="font-size: 16px;">求得旋转矩阵为</span></p>
+
+<p><span style="font-size: 16px;"></span></p>
+
+<p><span style="font-size: 16px;">由于这里使用齐次坐标，所以还需加上一维，最终变成如下形式</span></p>
+
+
+
+<p><span style="font-size: 16px;">这样就得到了三维空间中<strong><span style="font-size: 14pt;">绕Z轴旋转的 旋转矩阵式</span></strong></span></p>
+
+<p><span style="font-size: 16px;">对于绕X轴旋转的情况，我们只需将式一中的x用y替换，y用z替换，z用x替换即可。替换后得到</span></p>
+<p><span style="font-size: 16px;">(式二)</span></p>
+<p><span style="font-size: 16px;">对应的旋转矩阵为</span></p>
+<h2>绕X轴旋转矩阵</h2>
+
+
+
+<p><span style="font-size: 16px;">对于绕Y轴旋转的情况，只需对式二做一次同样的替换即可，的到的变换方程为</span></p>
+<p><span style="font-size: 16px;"></span></p>
+<p><span style="font-size: 16px;">对应的变换矩阵为</span></p>
+<h2>绕Y轴旋转矩阵</h2>
+<p><span style="font-size: 16px;"></span></p>
+
+
+<p><span style="font-size: medium;"><strong><span style="font-size: 18pt;">四.如何绕任意轴旋转以及怎么用glRotatef(angle,x,y,z)绕任意轴旋转</span></strong></span></p>
+<p><span style="font-size: medium;">　</span></p>
+<p><span style="font-size: medium;">绕通过原点的任意旋转轴的旋转是：<br>
+&nbsp;&nbsp;&nbsp;&nbsp;glRotatef(theta,&nbsp;vx,&nbsp;vy,&nbsp;vx)<br>
+其中vx，vy，vz用与定义通过坐标原点的旋转轴的方向，theta用于指定旋转角度。<br>
+如果旋转轴不在原点，可以先用glTranslatef(tx,&nbsp;ty,&nbsp;tz)将旋转轴平移到原点，调用上述函数旋转完成后再平移回原来的地方：glTranslatef(-tx,&nbsp;-ty,&nbsp;-tz)</span></p>
+
+<p><span style="font-size: medium;">至于为什么呢 已经有大佬的博客写过整个推导过程 直接推荐给你们：</span></p>
+
+<h2><a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/graphics/archive/2012/08/10/2627458.html">绕任意轴旋转</a></h2>
+
+<p><span style="font-size: medium;">博客地址是：https://www.cnblogs.com/graphics/archive/2012/08/10/2627458.html</span></p>
+
+<p><span style="font-size: medium;">当然为了大家方便看 我直接摘抄主要过来如下：</span></p>
+
+
+<p><span style="font-size: 16px;">绕任意轴旋转的情况比较复杂，主要分为两种情况，一种是平行于坐标轴的，一种是不平行于坐标轴的，对于平行于坐标轴的，我们首先将旋转轴平移至与坐标轴重合，然后进行旋转，最后再平移回去。</span></p>
+
+<ul>
+<li><span style="font-size: 16px;">将旋转轴平移至与坐标轴重合，对应平移操作</span></li>
+<li><span style="font-size: 16px;">旋转，对应操作</span></li>
+<li><span style="font-size: 16px;">步骤1的逆过程，对应操作 </span></li>
+
+</ul>
+
+<p><span style="font-size: 16px;">整个过程就是</span></p>
+
+<p><span style="font-size: 16px;"></span></p>
+
+<p><span style="font-size: 16px;">对于不平行于坐标轴的，可按如下方法处理。（该方法实际上涵盖了上面的情况）</span></p>
+
+<ol>
+<li><span style="font-size: 16px;">将旋转轴平移至原点</span></li>
+<li><span style="font-size: 16px;">将旋转轴旋转至YOZ平面</span></li>
+<li><span style="font-size: 16px;">将旋转轴旋转至于Z轴重合</span></li>
+<li><span style="font-size: 16px;">绕Z轴旋转θ度</span></li>
+<li><span style="font-size: 16px;">执行步骤3的逆过程</span></li>
+<li><span style="font-size: 16px;">执行步骤2的逆过程</span></li>
+<li><span style="font-size: 16px;">执行步骤1的逆过程</span></li>
+
+</ol>
+
+<p><span style="font-size: 16px;">假设用v1(a1, b2, c2)和v2(a2, b2, c2)来表示旋转轴，θ表示旋转角度。为了方便推导，暂时使用右手系并使用列向量，待得出矩阵后转置一下即可，上面步骤对应的流程图如下。</span></p>
+
+<p><span style="font-size: 16px;"></span></p>
+
+<p><span style="font-size: 16px;">步骤1是一个平移操作，将v1v2平移至原点，对应的矩阵为</span></p>
+
+<p><span style="font-size: 16px;"></span></p>
+
+<p><span style="font-size: 16px;">步骤2是一个旋转操作，将p(p = v2 -v1)旋转至XOZ平面，步骤3也是一个旋转操作，将p旋转至与Z轴重合，这两个操作对应的图如下。</span></p>
+
+<p><span style="font-size: 16px;"></span></p>
+
+<p><span style="font-size: 16px;">做点p在平面YOZ上的投影点q。再过q做Z轴垂线，则r是p绕X轴旋转所得，且旋转角度为α，且</span></p>
+
+<p><span style="font-size: 16px;">,&nbsp;&nbsp;&nbsp; </span></p>
+
+<p><span style="font-size: 16px;">于是旋转矩阵为</span></p>
+
+<p><span style="font-size: 16px;"></span></p>
+
+<p><span style="font-size: 16px;">现在将r绕Y轴旋转至与Z轴重合，旋转的角度为-beta（方向为顺时针），且</span></p>
+
+<p><span style="font-size: 16px;">,&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+
+<p><span style="font-size: 16px;">于是得到旋转矩阵为</span></p>
+
+<p><span style="font-size: 16px;"></span></p>
+
+<p><span style="font-size: 16px;">最后是绕Z轴旋转，对应的矩阵如下</span></p>
+
+<p><span style="font-size: 16px;"></span></p>
+
+<p><span style="font-size: 16px;">如果旋转轴是过原点的，那么第一步和最后一步的平移操作可以省略，也就是把中间五个矩阵连乘起来，再转置一下，得到下面的绕任意轴旋转的矩阵（这里要注意自己的opengl中是列向量还是行向量 需不要转置这个问题&nbsp; 列向量就不需要转置这一步了）</span></p>
+
+<p><span style="font-size: 16px;"></span></p>
+
+<p><span style="font-size: 16px;">即</span></p>
+
+<p><span style="font-size: 16px;"></span></p>
+
+<p><span style="font-size: 16px;">&nbsp;</span></p>
+
+
+<p><span style="font-size: 16px;">如果旋转轴是不过原点的，那么第一步和最后一步就不能省略，将所有七个矩阵连乘起来，得到如下变换矩阵</span></p>
+
+<p><span style="font-size: 16px;"></span></p>
+
+<p><span style="font-size: 16px;">对应如下这个超长的矩阵，在这里(u, v, w) = (a2, b2, c2) - (a1, b1, c1)，且是单位向量，a, b, c分别表示(a1, b1, c1)</span></p>
+
+<p><span style="font-size: 16px;"></span></p>
+<p><span style="font-size: medium;">&nbsp;</span></p>
+
+
+
+<p><span style="font-size: medium;"><span style="font-size: medium;"><strong><span style="font-size: 18pt;">五.结合OpenGL来进行</span></strong></span></span></p>
+
+<ul>
+<li><span style="font-size: medium;">假如此时我们要让自己的图形原点中心旋转：</span></li>
+
+</ul>
+<p><span style="font-size: medium;">　　那么直接调用&nbsp; <span style="font-size: medium;">glRotatef(GLfloat angle,GLfloat x,GLfloat y,GLfloat z) 即可&nbsp; 不断旋转的话 就直接把angle在其他循环函数中不断加一对360取余数就行了</span></span></p>
+
+<ul>
+<li><span style="font-size: medium;">假如此时我们要让自己的图形在（x,y,z）位置绕自身中心旋转：</span></li>
+
+</ul>
+<p><span style="font-size: medium;">　　那么直接调用<span style="font-size: 16px;"><strong>glTranslatef</strong><strong><span style="font-family: 宋体;">（</span></strong><strong>x,y,z</strong><strong><span style="font-family: 宋体;">）</span></strong></span>先将物体移动，然后在调用<span style="font-size: medium;"> <span style="font-size: medium;">glRotatef(GLfloat angle,GLfloat x,GLfloat y,GLfloat z)</span></span></span></p>
+
+
+<ul>
+<li><span style="font-size: medium;">假如此时我们要让自己的图形在（x,y,z）位置绕世界坐标系旋转：</span></li>
+
+</ul>
+<p><span style="font-size: medium;">　　那么就是先旋转在移动，先<span style="font-size: medium;">调用<span style="font-size: medium;"> <span style="font-size: medium;">glRotatef(GLfloat angle,GLfloat x,GLfloat y,GLfloat z)</span></span></span>，然后在移动到位置 <span style="font-size: medium;"><span style="font-size: 16px;"><strong>glTranslatef</strong><strong><span style="font-family: 宋体;">（</span></strong><strong>x,y,z</strong><strong><span style="font-family: 宋体;">）这也是先移动在旋转&nbsp; 和先旋转在移动的区别，一个绕自身中心旋转，一个绕世界坐标系旋转</span></strong></span></span></span></p>
+<p>　　<span style="font-size: 16px;">此时的 glRotatef(GLfloat angle,GLfloat x,GLfloat y,GLfloat z)函数中的 x,y,z 就是一个轴向量了 &nbsp; 绕哪个轴旋转的意思 &nbsp; &nbsp;&nbsp; x = 1，y = 0; z = 0;那么就是绕X轴旋转 其他同理 &nbsp;<strong><span style="font-family: verdana, sans-serif; color: #555555;"><span style="font-size: 14px; line-height: 21px;"><span style="color: #555555; font-family: simsun; font-size: 14px; line-height: 21px;">即手握住某个坐标轴，大拇指指向某轴的正方向，其余四个手指的弯曲方向即为绕某轴旋转的逆时针方向；反之为顺时针方向。</span></span></span></strong></span></p>
+<h1>&nbsp;</h1>
+
+
+
+
+<p><span style="font-size: 16px;"><span style="font-family: 宋体;">参考博客：https://blog.csdn.net/zbq_tt5/article/details/90046527</span></span></p>
+<p><span style="font-size: 16px;">&nbsp;　　　　 &nbsp;https://www.cnblogs.com/csyisong/archive/2008/12/09/1351372.html</span></p>
+<p><span style="font-size: 16px;">&nbsp;　　　　&nbsp; https://www.zhihu.com/question/26655998/answer/43847213</span></p>
+<p><span style="font-size: 16px;">　　　　 &nbsp; https://blog.csdn.net/yangmeng900816/article/details/46816007　　</span></p>
+<p><span style="font-size: 16px;">　　　　 &nbsp; https://www.cnblogs.com/graphics/archive/2012/08/08/2609005.html</span></p>
+
+
+
+
+<p><span style="font-size: 16px;"><span style="font-size: 16px;">若有兴趣交流分享技术，可关注本人公众号，里面会不定期的分享各种编程教程，和共享源码，诸如研究分享关于c/c++,python,前端，后端，opencv,halcon,opengl,机器学习深度学习之类有关于基础编程，图像处理和机器视觉开发的知识</span></span></p>
+
+						<div id="article_left_bottom_banner"><!-- article_left_bottom_banner -->
+<ins class="adsbygoogle common_ad_class" style="display: inline-block; width: 728px; height: 0px;" data-ad-client="ca-pub-9401041403549801" data-ad-slot="4469969972" data-adsbygoogle-status="done" data-ad-status="unfilled"><div id="aswift_2_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 0px; width: 728px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: hidden; opacity: 0;"><iframe id="aswift_2" name="aswift_2" style="left: 0px; position: absolute; top: 0px; border: 0px; width: 728px; height: 0px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="0" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/ads(5).html" data-google-container-id="a!3" data-load-complete="true" data-google-query-id="CLSYnfrnxP4CFR-H6QUdu14MeQ"></iframe></div></ins></div>
+<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+</script>						<p style="margin-top:20px;">
+						原文地址：https://www.cnblogs.com/DOMLX/p/12166896.html						</p>
+                        <div class="break"></div>
+                    </div>
+				</div>
+			</div>
+			<div class="common">
+    <div class="title-bar">随机文章</div>
+	<div class="hot_article">
+		<div class="hot_article_list">
+			<ul>
+			<li>
+					<a title="ElasticSearch优化系列二：机器设置（内存）" href="http://www.manongjc.com/detail/50-kqjtdwehqkwjtix.html">ElasticSearch优化系列二：机器设置（内存）</a>
+				</li><li>
+					<a title="Tensorflow之 CNN卷积神经网络的MNIST手写数字识别" href="http://www.manongjc.com/detail/50-uuxtkmjxhmhbwgw.html">Tensorflow之 CNN卷积神经网络的MNIST手写数字识别</a>
+				</li><li>
+					<a title="你听过算法也是可以贪心的吗？" href="http://www.manongjc.com/detail/50-tqmdkqzoxqztztc.html">你听过算法也是可以贪心的吗？</a>
+				</li><li>
+					<a title="前后端分离ueditor富文本编辑器的使用-Java版本" href="http://www.manongjc.com/detail/50-xnwvhhhqeodlqzr.html">前后端分离ueditor富文本编辑器的使用-Java版本</a>
+				</li><li>
+					<a title="Golang语言社区--Go语言基础第六节函数" href="http://www.manongjc.com/detail/50-mtizxspxgnnfhny.html">Golang语言社区--Go语言基础第六节函数</a>
+				</li><li>
+					<a title="Golang语言社区--理解 go interface 的 5 个关键点" href="http://www.manongjc.com/detail/50-jkmgguonlscoeso.html">Golang语言社区--理解 go interface 的 5 个关键点</a>
+				</li><li>
+					<a title="得到一个物种所有基因的TSS(转录起始位点)区域的bed文件。" href="http://www.manongjc.com/detail/50-wfieefwucdhqiod.html">得到一个物种所有基因的TSS(转录起始位点)区域的bed文件。</a>
+				</li><li>
+					<a title="如何选择聚类模块数目" href="http://www.manongjc.com/detail/50-dejkboumpbiocab.html">如何选择聚类模块数目</a>
+				</li><li>
+					<a title="谁能告诉我，这数据测毁了么？" href="http://www.manongjc.com/detail/50-bkhaoaxygvwdius.html">谁能告诉我，这数据测毁了么？</a>
+				</li><li>
+					<a title="计算资源及编程-仅针对生信人员" href="http://www.manongjc.com/detail/50-bywkjyzdloftdiu.html">计算资源及编程-仅针对生信人员</a>
+				</li><li>
+					<a title="从WGS测序得到的VCF文件里面提取位于外显子区域的【直播】我的基因组84" href="http://www.manongjc.com/detail/50-ejfmktnhsucoxlj.html">从WGS测序得到的VCF文件里面提取位于外显子区域的【直播】我的基因组84</a>
+				</li><li>
+					<a title="基因组重测序的unmapped reads assembly探究 【直播】我的基因组86" href="http://www.manongjc.com/detail/50-qnimyrlxvwmaqqi.html">基因组重测序的unmapped reads assembly探究 【直播】我的基因组86</a>
+				</li><li>
+					<a title="Centos 下非 Root 安装 Microsoft R Open" href="http://www.manongjc.com/detail/50-lvsqickvjcqmrnx.html">Centos 下非 Root 安装 Microsoft R Open</a>
+				</li><li>
+					<a title="下载TCGA所有癌症的maf文件做signature分析" href="http://www.manongjc.com/detail/50-bdljqjabhvyuwok.html">下载TCGA所有癌症的maf文件做signature分析</a>
+				</li>			<div class="break"></div>
+			</ul>
+		</div>
+		<div class="ads_in_hot_article">
+			<div class="_r7dkbdgpzt8" style="text-align: center;"><iframe id="iframeu6862864_0" name="iframeu6862864_0" src="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/vcnm.html" width="336" height="280" scrolling="no" frameborder="0"></iframe></div>
+    <script type="text/javascript">
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u6862864",
+            container: "_r7dkbdgpzt8",
+            async: true
+        });
+    </script>		</div>
+		<div class="break"></div>
+	</div>
+</div>
+				<div class="common">
+		<div class="title-bar">本站知识点必读</div>
+		<ul class="article-tutorial-list">
+			<li><a href="http://www.manongjc.com/javascript/javascript_tutorial.html">JavaScript 教程</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_editor_tool.html">JavaScript 编辑工具</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_apply_html.html">JavaScript 与HTML</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_java.html">JavaScript 与Java</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_data_structure.html">JavaScript 数据结构</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_basic_data_types.html">JavaScript 基本数据类型</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_special_data_type.html">JavaScript 特殊数据类型</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_operator.html">JavaScript 运算符</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_typeof_operator.html">JavaScript typeof 运算符</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_expression.html">JavaScript 表达式</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_data_conversion.html">JavaScript 类型转换</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_basic_syntax.html">JavaScript 基本语法</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_comments.html">JavaScript 注释</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_basic_flow_control.html">Javascript 基本处理流程</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_select_structure.html">Javascript 选择结构</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_if_statements.html">Javascript if 语句</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_if_nested.html">Javascript if 语句的嵌套</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_switch.html">Javascript switch 语句</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_loop_structure.html">Javascript 循环结构</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_loop_example.html">Javascript 循环结构实例</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_break_continue.html">Javascript 跳转语句</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_flow_summary.html">Javascript 控制语句总结</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_function_brief.html">Javascript 函数介绍</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_function_define.html">Javascript 函数的定义</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_function_call.html">Javascript 函数调用</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_special_function.html">Javascript 几种特殊的函数</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_in_function.html">JavaScript 内置函数简介</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_eval.html">Javascript eval() 函数</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_isfinite.html">Javascript isFinite() 函数</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_isnan.html">Javascript isNaN() 函数</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_parseint_parsefloat.html">parseInt() 与 parseFloat()</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_escape_unescape.html">escape() 与 unescape()</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_string_object.html">Javascript 字符串介绍</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_length.html">Javascript length属性</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_string_functions.html">javascript 字符串函数</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_data_object_brief.html">Javascript 日期对象简介</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_data_use_example.html">Javascript 日期对象用途</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_date_attr_function.html">Date 对象属性和方法</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_what_is_array.html">Javascript 数组是什么</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_create_array.html">Javascript 创建数组</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_array_get_set_value.html">Javascript 数组赋值与取值</a></li>
+			<li><a href="http://www.manongjc.com/javascript/js_array_method_attr.html">Javascript 数组属性和方法</a></li>
+			<div class="break"></div>
+		</ul>
+		<div class="break"></div>
+	</div>
+		</div>
+		<div class="right">
+			<div id="outer_float_course" style="position: fixed; top: 0px;">
+	<div id="float_course">
+	<span>本网站教程列表：</span>
+	<a href="http://www.manongjc.com/java/java_tutorial.html">JAVA教程</a>
+	<a href="http://www.manongjc.com/java_example/java_environment_example.html">Java实例</a>
+	<a href="http://www.manongjc.com/jsp/jsp_tutorial.html">JSP教程</a>
+	<a href="http://www.manongjc.com/poi/poi_tutorial.html">Apache POI教程</a>
+	<a href="http://www.manongjc.com/ejb/ejb_tutorial.html">EJB 教程</a>
+	<a href="http://www.manongjc.com/jdbc/jdbc_tutorial.html">JDBC 教程</a>
+	<a href="http://www.manongjc.com/spring/spring_tutorial.html">Spring 教程</a>
+	<a href="http://www.manongjc.com/php/php_tutorial.html">PHP教程</a>
+	<a href="http://www.manongjc.com/codeigniter/ci_tutorial.html">Codeigniter教程</a>
+	<a href="http://www.manongjc.com/mysql/mysql_tutorial.html">MYSQL 教程</a>
+	<a href="http://www.manongjc.com/mysql_basic/mysql-tutorial-basic.html">Mysql 基础教程</a>
+	<a href="http://www.manongjc.com/sql/sql_tutorial.html">SQL 教程</a>
+	<a href="http://www.manongjc.com/oracle/pl-sql-tutorial.html">PL/SQL教程</a>
+	<a href="http://www.manongjc.com/sqlite/sqlite_tutorial.html">SQLite 教程</a>
+	<a href="http://www.manongjc.com/redis/redis_tutorial.html">Redis 教程</a>
+	<a href="http://www.manongjc.com/html/html_tutorial.html">HTML 教程</a>
+	<a href="http://www.manongjc.com/css/css_tutorial.html">CSS教程</a>
+	<a href="http://www.manongjc.com/css3/css3_tutorial.html">CSS3 教程</a>
+	<a href="http://www.manongjc.com/cssref/css_reference.html">CSS 参考手册</a>
+	<a href="http://www.manongjc.com/javascript/javascript_tutorial.html">Javascript 教程</a>
+	<a href="http://www.manongjc.com/bootstrap/bootstrap_tutorial.html">Bootstrap 教程</a>
+	<a href="http://www.manongjc.com/sass/sass_tutorial.html">Sass 教程</a>
+	</div>
+</div>
+
+			<!--<div class="common">
+	<div class="title-bar">推荐阅读</div>
+	<ul class="caption_ul">
+		<li><a href="/article/86.html"><img src="/images/css-border-1.png" /></a><a href="/article/86.html"><div class="caption"><span>css 巧用border属性制作各种图形(矩形，梯形，三角形)</span></div></a></li>
+		<li><a href="/detail/25-tibllmhoyzxgodj.html"><img src="http://www.baizhud.com/images/6-1ZR9152K9621.gif" /></a><a href="/detail/25-tibllmhoyzxgodj.html"><div class="caption"><span>JavaScript break 语句</span></div></a></li>
+		<li><a href="/article/333.html"><img src="/images/jquery_datatable_2.jpg" /></a><a href="/article/333.html"><div class="caption"><span>jQuery datatables 表格插件介绍</span></div></a></li>
+	</ul>
+</div>-->
+			<div id="article_right_top"><!-- article_right_top -->
+<ins class="adsbygoogle common_ad_class" style="display: inline-block; width: 300px; height: 250px;" data-ad-client="ca-pub-9401041403549801" data-ad-slot="1376902777" data-adsbygoogle-status="done" data-ad-status="unfilled"><div id="aswift_3_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 250px; width: 300px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;border:0;width:300px;height:250px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/ads(6).html" data-google-container-id="a!4" data-load-complete="true" data-google-query-id="CJS4y_PnxP4CFe-F6QUdSMsPEw"></iframe></div></ins></div>
+<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+</script>			<div class="common first-box">
+				<div class="title-bar">
+					<a href="http://www.manongjc.com/category/6.html">最近更新</a>
+				</div>
+				<ul>
+					<li><a title="JSBridge小科普" href="http://www.manongjc.com/detail/57-knpibbduzgjxila.html">JSBridge小科普</a></li>
+						<li><a title="Greenplum编译安装" href="http://www.manongjc.com/detail/57-hsysxfuevcdsgvb.html">Greenplum编译安装</a></li>
+						<li><a title="宏任务和微任务到底是什么？" href="http://www.manongjc.com/detail/57-bgproqtsksytpge.html">宏任务和微任务到底是什么？</a></li>
+						<li><a title="React中的setState是异步的吗？" href="http://www.manongjc.com/detail/57-qnwoguuaypdciky.html">React中的setState是异步的吗？</a></li>
+						<li><a title="java安全编码指南之:堆污染Heap pollution" href="http://www.manongjc.com/detail/57-jmfydtpwlzpjteq.html">java安全编码指南之:堆污染Heap pollution</a></li>
+						<li><a title="ECMAScript6基础学习教程（五）对象" href="http://www.manongjc.com/detail/57-xveukkpelnupqcz.html">ECMAScript6基础学习教程（五）对象</a></li>
+						<li><a title="React入门系列（三）创建组件" href="http://www.manongjc.com/detail/57-pmlulpnalzaajtf.html">React入门系列（三）创建组件</a></li>
+						<li><a title="prometheus学习笔记(2)-利用java client写入数据" href="http://www.manongjc.com/detail/57-araemlpbpbpjqfm.html">prometheus学习笔记(2)-利用java client写入数据</a></li>
+						<li><a title="Vue入门系列（一）Vue技术栈" href="http://www.manongjc.com/detail/57-puybokqclcbldle.html">Vue入门系列（一）Vue技术栈</a></li>
+						<li><a title="Openwrt智能路由系统开发--内容总结" href="http://www.manongjc.com/detail/57-ilwjqiugjkhytye.html">Openwrt智能路由系统开发--内容总结</a></li>
+						<li><a title="干爆红队-爆破CS Teamserver 密码" href="http://www.manongjc.com/detail/57-fnyepnofpzirllc.html">干爆红队-爆破CS Teamserver 密码</a></li>
+						<li><a title="使用Golang免杀Tips" href="http://www.manongjc.com/detail/57-puoleeuzkdjsbdq.html">使用Golang免杀Tips</a></li>
+						<li><a title="centos7卸载自带jdk并安装新的jdk" href="http://www.manongjc.com/detail/57-viffwctszudarkc.html">centos7卸载自带jdk并安装新的jdk</a></li>
+						<li><a title="即使不懂单元测试，会用这个工具也够了~" href="http://www.manongjc.com/detail/57-qcmffzwxkimaiag.html">即使不懂单元测试，会用这个工具也够了~</a></li>
+						<li><a title="统计分布讲解" href="http://www.manongjc.com/detail/57-lwoqbltuetoitgs.html">统计分布讲解</a></li>
+										</ul>
+			</div>
+            <div id="outer-ad-right-sticky-article"><div id="article_right_bottom" style="position: static; top: 0px;"><!-- article_right_bottom -->
+<ins class="adsbygoogle common_ad_class" style="display: inline-block; width: 300px; height: 0px;" data-ad-client="ca-pub-9401041403549801" data-ad-slot="5807102372" data-adsbygoogle-status="done" data-ad-status="unfilled"><div id="aswift_4_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 0px; width: 300px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: hidden; opacity: 0;"><iframe id="aswift_4" name="aswift_4" style="left: 0px; position: absolute; top: 0px; border: 0px; width: 300px; height: 0px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="300" height="0" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/ads(7).html" data-google-container-id="a!5" data-google-query-id="CK_yy_PnxP4CFVDLfAod2O8M-A" data-load-complete="true"></iframe></div></ins></div></div>
+<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+</script>		</div>
+	</div>
+</div><script type="text/javascript" async="" data-bdms-faccdee21b68="eyJhcHBfa2V5IjoiODgwMCIsImFwcF92aWV3IjoicHJvbW90ZSIsImJyb3dzZXJfdXJsIjoiaHR0cHM6Ly9zb2ZpcmUuYmFpZHUuY29tL2RhdGEvdWEvYWIuanNvbiIsImZvcm1fZGVzYyI6IiIsInNlbmRfaW50ZXJ2YWwiOjUwLCJzZW5kX21ldGhvZCI6M30=" src="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/dfxaf3-635b4cd6.js"></script>
+<div class="footer">
+	<div class="copyright">Copyright (C) 2015 www.manongjc.com, All Rights Reserved. 版权所有  码农教程<br>
+	备案号：<a href="https://beian.miit.gov.cn/" style="color:#FFFFFF;" target="_blank">鄂ICP备2022014784号-1</a>
+	</div>
+</div>
+<script>
+<!--百度流量统计-->
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?94faa21dbcd89dc3dccb1b3e4bb2e254";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!--百度自动推送-->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+<ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;" data-ad-status="unfilled"><div id="aswift_5_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_5" name="aswift_5" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/ads(8).html" data-google-container-id="a!6" data-load-complete="true"></iframe></div></ins><div><object id="ClCache" click="sendMsg" host="" width="0" height="0"></object></div><iframe src="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/aframe.html" width="0" height="0" style="display: none;"></iframe></body><iframe id="google_esf" name="google_esf" src="./关于opengl中的矩阵平移，矩阵旋转，推导过程理解 OpenGL计算机图形学的一些必要矩阵运算知识 - 码农教程_files/zrt_lookup.html" style="display: none;"></iframe></html>

@@ -1,0 +1,3 @@
+﻿  填充.cpp
+E:\BaiduSyncdisk\代码\操作系统\实验\实验四-填充算法\填充\填充\填充.cpp(173,38): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  填充.vcxproj -> E:\BaiduSyncdisk\代码\操作系统\实验\实验四-填充算法\填充\x64\Debug\填充.exe
