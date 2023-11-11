@@ -1,0 +1,10 @@
+/* pages/demo1/demo1.wxss */
+.title{
+  font-size: large;
+}
+.bl{
+  display: block;
+  width: 100rpx;
+  height:100rpx;
+  background-color: rgb(45, 93, 134);
+}

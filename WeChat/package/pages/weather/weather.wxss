@@ -1,0 +1,70 @@
+/* pages/weather/weather.wxss */
+.header{
+  width: 100%;
+  height: 60rpx;
+    background: #0098ef;
+}
+.headerimg{
+  width: 100%;
+  height:100% ;
+}
+.contentwidth{
+  width: 700rpx;
+  margin: 10rpx auto;
+}
+.regionpicker{
+width: 700rpx;
+height: 60rpx;
+
+}
+.todayv{
+  height: 200rpx;
+
+}
+.top{
+  width: 100%;
+  height: 150rpx;
+  
+  display: flex;
+  align-items:center;
+ 
+}
+.top_img_wea{
+  width: 150rpx;
+  height: 150rpx;
+}
+.top_big_wea{
+  font-size: 78rpx;
+  line-height: 150rpx;
+}
+.wea{
+  width: 150rpx;
+  height: 110rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 42rpx;
+
+}
+.bottom{
+  font-weight: bold;
+}
+.sevenv{
+  height: 60rpx;
+  
+  display: flex;
+  justify-content: space-between;
+}
+.wea_img{
+  width: 50rpx;
+  height: 50rpx;
+  padding-right: 20rpx;
+}
+.sevenv view{
+  width: 180rpx;
+  font-size: 28;
+  
+}
+.sevenv view:last-child{
+text-align: right;
+}

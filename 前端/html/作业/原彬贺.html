@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span> 热点要闻</span>
+   
+
+        <div class="line"></div>
+    
+     
+    <ul type="square" >
+        <li class="strong"><strong>总书记的一周 (6月26日-7月2日)</strong></li>
+        <li><strong>以党的创新理论滋养初心、引领使命““科特派”的田野和远方</strong></li>
+        <li class="normal">今年前五个月我国交通重大工程项目加快建设</li>
+        <li class="normal">服务不间断 持续助力高校毕业生就业</li>
+        <li class="normal">福建高质量发展步履坚实</li>
+        <li class="normal">养老机构“抢订”毕业生 留住青年人才为养老行业注入新活力</li>
+       
+    </ul>
+    <style>
+        span{
+            color: #2f63ba;
+            padding: 0 20px;
+    font-size: 18px;
+    font-weight: 700;
+        }
+        ul li::marker{
+            color:#da4453;
+            width: 5px;
+    height: 5px;
+        }
+        
+
+
+
+
+.line{
+    margin-top: 5px;
+    margin-bottom: none;
+    margin-left: 60px;
+    content: ""; 
+    height: 0.5px;
+    width: 30%;
+    background-color:black;
+    left: 20px; 
+}
+.line::before {
+
+    content: ""; 
+
+position: absolute;
+
+
+
+left: 20px; 
+
+width: 15%; 
+
+height: 2px; 
+
+background-color:  #2f63ba; 
+
+}
+
+        strong{
+            font: 700 18px/26px "\5FAE\8F6F\96C5\9ED1",tahoma;
+        }
+        normal{
+            font: 400 16px/24px "\5FAE\8F6F\96C5\9ED1",tahoma;
+        }
+
+        
+    </style>
+</body>
+</html>

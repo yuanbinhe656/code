@@ -1,0 +1,26 @@
+<!--index.wxml-->
+ <!--整体容器 -->
+<view class="container">
+ <!--顶部标题 -->
+<view class="title">欢迎使用简易成语小词典</view>
+
+<!--查询表单 -->
+ <form bindsubmit="search">
+<input name="chengyu" placeholder="请输入要查的成语"></input>
+ <button form-type="submit">查找</button>
+ </form>
+
+ <!--查询结果 -->
+ <view class="result">
+ <block wx:if="{{result!=''}}">
+<view hidden="{{result.pinyin==null}}">•拼音：{{result.pinyin}}</view>
+ <view hidden="{{result.jbsy==null}}">•基本释义：{{result.jbsy}}</view>
+ <view hidden="{{result.xxsy==null}}">•详细释义：{{result.xxsy}}</view>
+ <view hidden="{{result.chuchu==null}}">•出处：{{result.chuchu}}</view>
+ <view hidden="{{result.liju==null}}">•例句：{{result.liju}}</view>
+<view hidden="{{result.jyc==null}}">•近义词：{{result.jyc}}</view>
+<view hidden="{{result.fyc==null}}">•反义词：{{result.fyc}}</view>
+ </block>
+<view wx:else>{{tip}}</view>
+ </view>
+ </view>

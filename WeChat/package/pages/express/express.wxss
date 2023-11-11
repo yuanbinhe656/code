@@ -1,0 +1,77 @@
+/* pages/express/express.wxss */
+.logoview{
+  width: 100%;
+  height: 240rpx;
+  margin: 10 auto;
+  text-align: center;
+}
+.logoimg{
+  width: 170rpx;
+  height: 170rpx;
+ 
+}
+.title{
+  font-size: 26rpx;
+  color: #777;
+}
+.searchparent{
+   width: 700rpx;
+  height: 86rpx;
+  position: relative;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between; 
+  
+  
+}
+.searchinput{
+  border: 4rpx solid #eb5555;
+  width: 510rpx;
+  height: 74rpx;
+  padding-left: 20rpx;
+  border-radius: 20rpx;
+
+}
+
+.searchbtn{
+  width: 150rpx;
+  height: 80rpx;
+  background-color: #AA0000;
+  color: #FFF;
+  font-size: 34rpx;
+  border-radius: 20rpx;
+}
+.scanimg{
+  position: absolute;
+  width: 80rpx;
+  height:65rpx ;
+  right: 180rpx;
+  top:5px;
+  z-index: 10;
+}
+.selectenterprise{
+  width: 700rpx;
+  height: 80rpx;
+  background-color: #AA0000;
+  margin: 5rpx auto;
+  text-align: center;
+  line-height: 80rpx;
+  color: #FFF;
+}
+.resultListV{
+  width: 700rpx;
+  height: auto;
+  background: #CCC;
+  border-radius: 16rpx;
+  margin: 10rpx auto;
+  font-size: 28rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.listparent{
+  width: 700rpx;
+  height: 600rpx;
+  margin: 12rpx auto;
+  overflow-y: auto;
+}

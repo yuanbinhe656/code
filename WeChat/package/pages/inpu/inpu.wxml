@@ -1,0 +1,9 @@
+<!--pages/inpu/inpu.wxml-->
+<view>
+<input type="text" class="searchinput" model:value="{{myLogistiCode}}" placeholder="请输入快递单号"></input>
+</view>
+<view>
+<button bindtap="dow">
+hah
+</button>
+</view>

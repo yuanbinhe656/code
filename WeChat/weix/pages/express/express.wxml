@@ -1,0 +1,30 @@
+<!--pages/express/express.wxml-->
+<!-- logo -->
+<view class="logoview">
+  <image class="logoimg" src="http://qny.ggaoda.cn/lc/kd.png"></image>
+  <view class="title">查快递</view>
+</view>
+<!-- logo -->
+
+<!-- 快递输入区域 -->
+<view class="searchparent">
+  <input type="text" placeholder="请输入快递单号" class="searchinput" model:value="{{myLogistiCode}}"  bindchange="onInputChange" ></input>
+  <view bindtap="getExpressList" class="searchbtn">查询</view>
+  <image bindtap="getCode" class="scanimg" src="https://ts1.cn.mm.bing.net/th/id/R-C.41279533248291ee8d316ea1efa6cfe6?rik=WgD5oyE4iNN2dQ&riu=http%3a%2f%2fbpic.588ku.com%2foriginal_pic%2f19%2f04%2f02%2fe76fa2ca9646e373f5ec65a4acb3c129.jpg&ehk=FTFTMUucIQTJF9iJ1U7RZqJpEhTgPXS0R99ijcz1iiE%3d&risl=&pid=ImgRaw&r=0"></image>
+</view>
+<!-- 快递输入区域 -->
+
+<!-- 选择快递公司 -->
+<picker class="selectenterprise" range="{{arrlist}}" range-key="{{'name'}}" bindchange="changeEnterprise">
+  {{arrlist[curIndex].name}}
+</picker>
+<!-- 选择快递公司 -->
+
+<!-- 显示查询物流轨迹信息 -->
+<view class="listparent">
+  <view class="resultListV" wx:for="{{reusltList}}" wx:for-item="item">
+    <icon type="success" size="14"></icon>
+    {{item.AcceptStation}} {{item.AcceptTime}}
+  </view>
+</view>
+<!-- 显示查询物流轨迹信息 -->

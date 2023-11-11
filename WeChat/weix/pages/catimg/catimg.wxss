@@ -1,0 +1,50 @@
+/* pages/catimg/catimg.wxss */
+.show{
+  margin-top: 10%;
+  height: 600rpx;
+  width: 100%;
+  background: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.imgshow{
+  max-height: 600rpx;
+  
+}
+.buttom{
+    width: 100%;
+    
+    position: fixed;
+    bottom: 20%;
+}
+.top{
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+}
+.top_btn{
+  border-radius: 16rpx;
+  background: #01afff;
+  display: inline-block;
+  height: 70rpx;
+  width: 200rpx;
+  text-align: center;
+  line-height: 70rpx;
+}
+.select{
+  background: rgb(123, 255, 0);
+  width: 600rpx;
+  height: 70rpx;
+  text-align: center;
+  line-height: 70rpx;
+  border-radius: 16rpx;
+}
+.buttom_btn
+{
+
+  width: 75%;
+  background: rgba(36, 236, 193, 0.863);
+  border-radius: 16rpx;
+}

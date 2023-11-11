@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+       function closs(){
+        close();
+       }
+       function print(){
+        console.log("haha");
+       }
+       var tim=setTimeout(function(){
+        console.log("zz");
+       },2000);
+       var times=setTimeout(function(){
+        clearTimeout(tim);
+       },100);
+     function locationA(){
+        location.assign("demo1.html");
+     }
+     function relaod()
+     {
+        location.reload(true);
+     }
+     console.log(window.history);
+     var sttr="abca\
+     aaa";
+     var strr1="abc";
+     var strr2="aaa";
+     var sttr=strr1+"\n"+strr2;
+     var str1=sttr.replace(/^a/g,"#");
+     var str2=sttr.replace(/^a/m,"#");
+     var str3=sttr.replace(/^a/gm,"#");
+     var str4=sttr.replace(/a/gm,"#");
+     console.log(sttr);
+     console.log(str1);
+     console.log(str2);
+     console.log(str3);
+     console.log(str4);
+    </script>
+    <style>
+        .pass::before{
+            content: "发放";
+            border: 10px;
+            font-style: inherit;
+            display: block;
+            width: 30px;
+            height: 40px;
+            color: blue;
+        }
+        h1::after{
+            content:"";
+            display: block;
+            width: 30px;
+            height: 40px;
+            color: blue;
+            border: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <button onclick="closs()">close</button>
+    <button onclick="">clear</button>
+    <button onclick="locationA()">clear</button>
+    <button onclick="relaod()">clear</button>
+    <div class="pass">aofafg
+        <h1>中国</h1>
+    </div>
+</body>
+</html>

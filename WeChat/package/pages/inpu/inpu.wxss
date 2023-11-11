@@ -1,0 +1,4 @@
+/* pages/inpu/inpu.wxss */
+input{
+  background: rgb(194, 83, 83);
+}

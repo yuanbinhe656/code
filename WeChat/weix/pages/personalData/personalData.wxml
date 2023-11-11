@@ -1,0 +1,74 @@
+<view class="detailWrap">
+    <view class="basicInfo">
+        <view class="icon"></view>
+        <view class="basic1"> 基本资料</view>
+        <navigator class="edit">编辑</navigator>
+    </view>
+    <view class="nameWrap">
+        <view class="name">阿坤 <text class="iconfont icon-xingbie-nan"></text></view>
+        <view class="position iconfont icon-weizhi"> 河南 郑州</view>
+    </view>
+    <view class="ageWrap">
+        <view class="age">25岁</view>
+        <view class="height">180cm</view>
+        <view class="star">狮子座</view>
+    </view>
+    <view class="lableWrap">
+        <view class="lable">
+            <text> 职业 : </text>歌手 偶像练习生 
+        </view>
+        <view class="lable">
+            <text> 座右铭 : </text> 披荆斩棘，护坤为王
+        </view>
+    </view>
+</view>
+<view class="introduceWrap">
+    <view class="introduceHead">
+        <view class="icon"></view>
+        <view class="aboutMe">关于我</view>
+        <navigator class="edit">编辑</navigator>
+    </view>
+    <view class="introduceMyself">
+        全民制作人大家好，我是练习时长两年半的个人练习生蔡徐坤.
+    </view>
+</view>
+<view class="hobbyWrap">
+    <view class="hobbyHead">
+        <view class="icon"></view>
+        <view class="hobby">兴趣爱好</view>
+        <navigator class="edit">编辑</navigator>
+    </view>
+    <view class="hobbyContent">
+        唱 跳 rap 篮球
+    </view>
+</view>
+<view class="hobbyWrap">
+    <view class="hobbyHead">
+        <view class="icon"></view>
+        <view class="hobby">感情观</view>
+        <navigator class="edit">编辑</navigator>
+    </view>
+    <view class="hobbyContent">
+        在#奔跑吧#节目中蔡徐坤表示:“多大结婚其实不是年龄决定的，得遇到对的人”
+    </view>
+</view>
+<view class="hobbyWrap">
+    <view class="hobbyHead">
+        <view class="icon"></view>
+       <view class="hobby">心仪的Ta</view>
+        <navigator class="edit">编辑</navigator>
+    </view>
+    <view class="hobbyContent">
+        C女士
+    </view>
+</view>
+<view class="hobbyWrap">
+    <view class="hobbyHead">
+        <view class="icon"></view>
+        <view class="hobby">微信号</view>
+        <navigator class="edit">编辑</navigator>
+    </view>
+    <view class="Content">
+        留下微信号，相互喜欢的人才能看见
+    </view>
+</view>

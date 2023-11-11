@@ -1,0 +1,43 @@
+<!--头部-->
+<view class="header">
+<image class="headerimg" src="http://www.itlaobing.com/minproject/weather/mincloud.png"></image>
+</view>
+<!--头部-->
+<!--城市选择器-->
+<picker mode="region" class="regionpicker contentwidth" bindchange="selectchange">
+请选择城市：{{selectvaule}}
+</picker>
+<!--城市选择器-->
+<!--当天天气-->
+<view class="todayv contentwidth" >
+<view class = "top"> 
+<view class="top_big_wea">{{todayWeather.wea}}</view>
+<image src="http://www.itlaobing.com/minproject/weather/{{todayWeather.wea_img}}.png" class="top_img_wea"></image>
+<view class="wea">
+<text>{{todayWeather.tem_day}}℃</text>
+<text>{{todayWeather.tem_night}}℃</text>
+</view>
+</view>
+<view class = "bottom"> 
+{{todayWeather.date}}
+{{todayWeather.wea}}
+{{todayWeather.tem_day}}/{{todayWeather.tem_night}}
+{{todayWeather.win}}
+{{todayWeather.win_speed}}
+</view>
+
+</view>
+<!--当天天气-->
+
+<!--未来七天的-->
+<view class="sevenv contentwidth" wx:for="{{weeklist}}" wx:for-item="item">
+<view wx:if="{{index==0}}">今天 </view>
+<view wx:elif="{{index==1}}">明天 </view>
+<view wx:else >{{item.date}} </view>
+
+<image src="http://www.itlaobing.com/minproject/weather/{{item.wea_img}}.png" class="wea_img"></image>
+<view>{{item.wea}}</view>
+<view>{{item.tem_day}}/{{item.tem_night}}℃</view>
+
+</view>
+<!--未来七天的-->

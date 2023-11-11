@@ -1,0 +1,9 @@
+/* pages/starter/starter.wxss */
+
+.splash{
+  width: 100vw;
+  height: 100vh;
+  
+  
+  
+}

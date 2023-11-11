@@ -1,0 +1,30 @@
+ /**index.wxss**/
+.container{
+display: flex;
+flex-direction: column;
+padding: 20rpx;
+ }
+
+/* 顶部标题 */
+.title{
+text-align: center;
+font-size: 40rpx;
+font-weight: bold;
+margin: 20rpx;
+ }
+
+ /* 文本输入框 */
+ input{
+ border: 1rpx solid silver;
+ border-radius: 20rpx;
+ height: 80rpx;
+}
+
+ /* 按钮 */
+ button{
+ margin:20rpx 0;
+}
+
+/* 查询结果框 */
+ .result view{
+ margin: 20rpx; }

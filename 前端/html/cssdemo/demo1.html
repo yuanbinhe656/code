@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS选择器练习</title>
+    <style>
+        #div{
+            width: 200px;
+            background-color: #ccc;
+        }
+        #div li{
+            font-size: 12px;
+        }
+        #div .first{
+            font-size: 14px;
+            color:#ff7300;
+            font-weight: bold;
+        }
+        #testtransition{
+            width: 100px;
+            height: 20px;
+            background-color: aqua;
+            transition:  width ease-in 2s .2s;
+
+        }
+        #testtransition:hover{
+            width:200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div">
+    <ul>
+        <li class="first">家用电器</li>
+        <li class="secend">大家电</li>
+        <li class="secend">洗衣机</li>
+        <li class="secend">电冰箱</li>
+        <li class="secend">平板电脑</li>
+    </ul>
+    <ul>
+        <li class="first">家用电器</li>
+        <li class="secend">大家电</li>
+        <li class="secend">洗衣机</li>
+        <li class="secend">电冰箱</li>
+        <li class="secend">平板电脑</li>
+    </ul>
+    </div>
+    <div >
+        <div id="testtransition"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<!--pages/demo1/demo1.wxml-->
+<text class="title">{{title}}</text>
+
+<text>\n</text>
+<text>pages/demo1/demo1.wxml</text>
+<navigator url="../index/index" open-type="redirect">
+  <button >点击</button>
+</navigator>
+
+<view><image src="../../img/iocn.jpg"></image></view>
+<view class="bl"></view>

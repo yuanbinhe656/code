@@ -1,0 +1,76 @@
+/* pages/express/express.wxss */
+.logoview{
+    width: 340rpx;
+    height: 220rpx;
+    margin: 15rpx auto;
+    text-align: center;
+  }
+  .logoimg{
+    width: 170rpx;
+    height: 170rpx;
+  }
+  .title{
+    font-size: 26rpx;
+    color:#777;
+  }
+  .searchparent{
+    width: 700rpx;
+    height: 86rpx;
+    /* background-color: rosybrown; */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+  .searchinput{
+    border: 4rpx solid #9999FF;
+    width: 520rpx;
+    height: 74rpx;
+    padding-left: 20rpx;
+    border-radius: 20rpx;
+  }
+  .searchbtn{
+    width: 150rpx;
+    height: 80rpx;
+    background-color: #9999FF;
+    color: #FFF;
+    font-size: 34rpx;
+    border-radius: 20rpx;
+    text-align: center;
+    line-height:80rpx;
+    cursor: pointer;
+  }
+  .scanimg{
+    position: absolute;
+    width: 80rpx;
+    height: 65rpx;
+    top:10rpx;
+    right: 170rpx;
+    z-index: 10;
+  }
+  .selectenterprise{
+    width: 700rpx;
+    height: 80rpx;
+    background-color: #9999FF;
+    margin: 5rpx auto;
+    text-align: center;
+    color: #FFF;
+    line-height: 80rpx;
+    border-radius: 20rpx;
+  }
+  .resultListV{
+    width: 700rpx;
+    height: auto;
+    background-color: #EEE;
+    border-radius: 16rpx;
+    margin:12rpx auto;
+    font-size: 28rpx;
+    padding: 10rpx;
+    box-sizing: border-box;
+  }
+  .listparent{
+    margin:12rpx auto;
+    width: 700rpx;
+    height: 650rpx;
+    overflow-y: auto;
+  }

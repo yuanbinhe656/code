@@ -1,0 +1,26 @@
+<!--pages/express/express.wxml-->
+<!--logoview-->
+<view class="logoview">
+<image src="http://www.itlaobing.com/minproject/express/logo.jpg" class="logoimg" ></image>
+<view class="title">郑州轻工二手交易市场</view>
+</view>
+<!--logo-->
+<!--快递查询-->
+<view class="searchparent">
+  <input type="text" class="searchinput" model:value="{{myLogistiCode}}" placeholder="请输入快递单号"></input>
+  <button class="searchbtn" bindtap="getExpressList" >查询</button>
+  <!---->
+  <image bindtap="getCode" class="scanimg" src="http://www.itlaobing.com/minproject/express/scan.png"></image>
+</view>
+<!--选择快递公司-->
+<picker class="selectenterprise" range="{{arrlist}}" range-key="{{'name'}}" bindchange="changeEnterprise">{{arrlist[curIndex].name}}
+</picker>
+<!--选择快递公司-->
+
+<!--显示查询的物流轨迹信息-->
+<view class="listparent">
+<view class="resultListV" wx:for="{{requestlist}}" wx:for-item="item">
+<icon type="{{iconselctlist[inconIndex].icon}}" size="12"></icon>{{item.AcceptStation}} {{item.AcceptTime}}
+</view>
+</view>
+<!--显示查询的物流轨迹信息-->

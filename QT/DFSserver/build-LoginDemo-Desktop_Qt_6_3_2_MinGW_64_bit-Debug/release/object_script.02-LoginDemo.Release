@@ -1,0 +1,10 @@
+release/main.o
+release/mainwindow.o
+release/login.o
+release/mytitlebar.o
+release/changeskin.o
+release/qrc_res.o
+release/moc_mainwindow.o
+release/moc_login.o
+release/moc_mytitlebar.o
+release/moc_changeskin.o

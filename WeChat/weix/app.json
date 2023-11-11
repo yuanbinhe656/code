@@ -1,0 +1,67 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/notebook/notebook",
+        "pages/new/new",
+        "pages/schedule/schedule",
+        "pages/express/express",
+        "pages/routes/routes",
+        "pages/logs/logs",
+        "pages/weather/weather",
+        "pages/cidian/cidian",
+        "pages/saorao/saorao",
+        "pages/catimg/catimg",
+        "pages/xiaoai/xiaoai",
+        "pages/personalData/personalData"
+
+
+     
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "一指通",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "color": "#999",
+        "selectedColor": "#444",
+        "backgroundColor": "#fff",
+        "borderStyle": "black",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "images/tabbar/home.png",
+                "selectedIconPath": "images/tabbar/home2.png"
+            },
+            {
+                "pagePath": "pages/notebook/notebook",
+                "text": "日记",
+                "iconPath": "images/tabbar/xiangmu.png",
+                "selectedIconPath": "images/tabbar/xiangmu2.png"
+            },
+            {
+                "pagePath": "pages/schedule/schedule",
+                "text": "日程",
+                "iconPath": "images/tabbar/mine.png",
+                "selectedIconPath": "images/tabbar/mine2.png"
+            },
+            {
+                "pagePath": "pages/personalData/personalData",
+                "text": "我的",
+                "iconPath": "images/tabbar/my1.png",
+                "selectedIconPath": "images/tabbar/my2.png"
+            }
+        ],
+        "position": "bottom"
+    },
+    "networkTimeout": {
+        "request": 15000
+    },
+    "permission": {
+        "scope.userLocation": {
+            "desc": "你的位置信息将用于小程序位置接口的效果展示"
+        }
+    }
+}

@@ -1,0 +1,24 @@
+<!--顶部信息-->
+<view class="top">小爱同学</view>
+<scroll-view class="body" scroll-into-view="{{bottom}}" scroll-y="true">
+  <view wx:for="{{chathistory}}" wx:for-item="item" class="{{item.name}}">
+    <view class="vievie">
+      <view class="vieimg">
+        <image calss="chatimg" wx:if="{{1 == index%2}}" mode="widthFix" src="https://qny.ggaoda.cn/others/{{item.name}}1.png"></image>
+      </view>
+    </view>
+    <view class="in">{{item.data}}</view>
+    <view class="vievie">
+      <view class="vieimg">
+        <image calss="chatimg" wx:if="{{0 == index%2}}" mode="widthFix" src="https://qny.ggaoda.cn/others/{{item.name}}.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="mybottom" id="bottom">
+  </view>
+</scroll-view>
+
+<view class="buttom">
+  <input type="text" class="chatinput" model:value="{{chatdata}}" bindconfirm="send" bindinput="refoucs" focus="{{focus}}"></input>
+  <button class="send_btn" bindtap="send">发送</button>
+</view>

@@ -1,0 +1,17 @@
+<!--头部导航-->
+<view class="top">
+<picker class="select" range="{{arrlist}}" range-key="{{'name'}}" bindchange="selectchang"> {{arrlist[curIndex].name}}</picker>
+<button class="top_btn" bindtap="selectimg">确定</button>
+</view>
+<!--头部导航-->
+<!--照片显示-->
+<view class="show">
+  <image src="{{imgurl}}" class="imgshow"></image>
+
+</view>
+<!--照片显示-->
+<!--底部按钮-->
+<view class="buttom">
+<button class="buttom_btn" bindtap="selectimg">随机看猫</button>
+</view>
+<!--底部按钮-->

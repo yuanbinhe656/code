@@ -1,0 +1,24 @@
+/* pages/saorao/saorao.wxss */
+.body {
+    width : 80;
+    margin : 0 auto;
+}
+.phoneInput {
+    margin-top:  60px;
+    border : 1px solid hsla(209, 93%, 47%, 0.357);
+    height: 35px;
+    border-radius: 10px;
+    text-align: center;
+}
+.btnQuery {
+    width : 100px;
+    
+    
+    margin: 10px auto;
+
+}
+.result {
+    font-size: 17px;
+    color: rgb(12, 39, 128);
+    font-family: '宋体';
+}

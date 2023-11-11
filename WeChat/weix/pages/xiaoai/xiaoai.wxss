@@ -1,0 +1,107 @@
+/* pages/xiaoai/xiaoai.wxss */
+.top{
+  text-align: center;
+  line-height: 70rpx;
+  font-size: medium;
+  font-weight: bold;
+  height: 70rpx;
+  width: 100%;
+  background: rgb(36, 178, 235);
+}
+.body{
+  overflow-y: auto;
+  width: 700rpx;
+  height: 1030rpx;
+  margin: 12rpx auto;
+}
+
+.xiaoai{
+  height: auto;
+  margin: 10rpx auto; 
+  padding: 0;
+  display: flex;
+  padding-right: 20%;
+ 
+}
+.xiaoai .in{
+  display: inline-block;
+  background: rgb(51, 207, 255);
+  font-size: 40rpx;
+  box-sizing: border-box;
+  word-break:break-all;
+  border-radius: 10rpx;
+  padding: 5rpx 10rpx;
+  
+ 
+}
+.me{
+  height: auto;
+  margin: 10rpx auto; 
+  padding: 0;
+  display: flex;
+  padding-left: 20%;
+  justify-content:flex-end;
+  
+}
+.me .vievie{
+  margin-left: 10rpx;
+}
+.xiaoai .vievie{
+  margin-right: 10rpx;
+}
+.vievie{
+  display: inline-block;
+  
+}
+.vieimg{
+  display:flex;
+  width: 60rpx;
+  
+}
+.chatimg{
+  border-radius: 16rpx;
+  
+   
+}
+.me .in{
+  display: inline-block;
+  background: #04BE02;
+  font-size: 40rpx;
+  box-sizing: border-box;
+  word-break:break-all;
+  border-radius: 10rpx;
+  padding: 5rpx 10rpx;
+}
+.buttom{
+  padding-bottom: 10rpx;
+  width: 100%;
+  position: fixed;
+  bottom: 0%;
+  justify-content: space-between;
+  display: flex;
+  align-items:center;
+  
+}
+.chatinput{
+border: rgb(54, 187, 228);
+border-style:solid;
+border-radius: 20rpx;
+margin-left: 20rpx;
+display: inline-block;
+height: 70rpx;
+width: 70%;
+padding-left: 20rpx;
+line-height: 70rpx;
+}
+.send_btn{
+  display: inline-block;
+  height: 70rpx;
+  width: 20%;
+  background: rgb(54, 187, 228);
+  text-align: center;
+  line-height: 70rpx;
+}
+.mybottom{
+  width: 90%;
+  height:90px ;
+}

@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/demo1/demo1",
+    "pages/index/index",
+    "pages/logs/logs"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FF0000",
+    "navigationBarTitleText": "我的小程序",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh":true
+    
+  },
+  "tabBar":
+  {
+    "color":"blue",
+    "position": "bottom",
+    "list":[{
+      "pagePath":"pages/index/index",
+      "text":"快递",
+      "iconPath": "/img/baricon (3).png",
+      "selectedIconPath": "/img/baricon (4).png"
+    },
+    {
+      "pagePath":"pages/demo1/demo1",
+      "text":"天气",
+      "iconPath": "/img/baricon (1).png",
+      "selectedIconPath": "/img/baricon (2).png"
+    }
+  ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
