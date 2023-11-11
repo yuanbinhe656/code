@@ -1,0 +1,10 @@
+.a-btn{
+	margin-left: 20px;
+    line-height: 30px;
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    border: 1px solid #337ab7;
+    border-radius: 2px;
+    text-align: center;
+}

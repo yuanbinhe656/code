@@ -1,0 +1,4 @@
+#NOTE: This is an internal implementation file, its format can be changed without prior notice.
+#Thu Mar 04 20:14:54 CST 2021
+default-http\://repo.maven.apache.org/maven2/.lastUpdated=1614860094317
+http\://repo.maven.apache.org/maven2/.error=Could not transfer artifact org.springframework.security\:org.springframework.security.core\:jar\:3.0.5.RELEASE from/to central (http\://repo.maven.apache.org/maven2)\: Failed to transfer http\://repo.maven.apache.org/maven2/org/springframework/security/org.springframework.security.core/3.0.5.RELEASE/org.springframework.security.core-3.0.5.RELEASE.jar. Error code 501, HTTPS Required

@@ -1,0 +1,402 @@
+/*-------------------------样式的初始化*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+/*清除浮动*/
+/*双伪元素清除法
+  1、清除浮动
+  2、解决margin的塌陷
+*/
+.clearfix::before,
+.clearfix::after {
+  content: '';
+  display: table;
+}
+.clearfix::after {
+  clear: both;
+}
+/*兼容ie*/
+.clearfix {
+  *zoom:1;
+}
+
+/*
+  版心：宽度固定并且水平居中的盒子
+*/
+.w {
+  width: 1226px;
+  margin: 0 auto;
+}
+
+
+/*最后需要删除掉*/
+/*body {
+  height: 3000px;
+}*/
+
+/*--------------------------header的样式*/
+.header {
+  height: 40px;
+  background-color: #333333;
+}
+
+.header ul li {
+  height: 40px;
+  float: left;
+  line-height: 40px;
+  color: #40403b;
+  font-size: 12px;
+}
+
+.header ul li a {
+  font-size: 12px;
+  color: #b0b0b0;
+  padding: 0px 7px;
+}
+
+.header ul li:first-child a {
+  padding-left: 0px;
+}
+
+/*-----------------------nav的样式*/
+.nav {
+  height: 78px;
+  /*ps*/
+  background-color: pink;
+  margin-top: 22px;
+}
+
+.nav .logo {
+  width: 55px;
+  height: 55px;
+  background: url(images/logo.png);
+}
+
+.nav .new {
+  width: 163px;
+  height: 66px;
+  background: url(images/new.gif);
+  margin-left: 15px;
+}
+
+.nav ul {
+  float: left;
+  padding-top: 21px;
+}
+
+.nav ul li {
+  float: left;
+}
+
+.nav ul li a {
+  padding: 0px 13px;
+  font-size: 16px;
+  color: #000;
+}
+
+/*------------------------------banner的样式*/
+.banner {
+  height: 460px;
+  /*ps*/
+  background-color: hotpink;
+}
+
+.banner .left {
+  width: 235px;
+  height: 460px;
+  background-color: #2c505f;
+  padding-top: 20px;
+  /*自动内减*/
+  box-sizing:border-box;
+  float: left;
+}
+
+.banner .left li {
+  height: 42px;
+  /*ps*/
+  background-color: skyblue;
+  line-height: 42px;
+  padding-left: 30px;
+  /*padding-right: 24px;*/
+  background: url(images/right.png) no-repeat 203px center;
+}
+
+.banner .left li:hover {
+  background-color: red;
+}
+
+.banner .left li a {
+  color: #fff;
+  font-size: 12px;
+}
+
+.banner .right {
+  width: 991px;
+  height: 460px;
+  background: url(images/banner.png);
+  float: right;
+}
+
+/*---------------------------product的样式*/
+.product {
+  height: 170px;
+  /*ps*/
+  /*background-color: cyan;*/
+  margin-top: 14px;
+}
+
+.product .left {
+  width: 234px;
+  height: 170px;
+  background-color: #5f5750; 
+  /*overflow: hidden;*/
+}
+
+.product .left p {
+  font-size: 14px;
+  color: #fff;
+  padding-right: 53px;
+  text-align: right;
+}
+
+.product .left p:first-child {
+  margin-top: 56px;
+  height: 38px;
+}
+
+.product .pro1 {
+  width: 317px;
+  height: 170px;
+  background: url(images/big/pro1.jpg);
+  margin-left: 14px;
+  background-size: 100% 100%;
+}
+.product .pro2 {
+  width: 317px;
+  height: 170px;
+  background: url(images/big/pro2.jpg);
+  margin-left: 15px;
+  background-size: 100% 100%;
+}
+.product .pro3 {
+  width: 317px;
+  height: 170px;
+  background: url(images/big/pro3.jpg);
+  /*
+    背景图片的大小：background-size
+      取值：
+        背景图片的宽度 背景图片的高度
+    此时的百分比指的是当前盒子宽高的百分比！！！
+  */
+  background-size: 100% 100%;
+}
+
+/*---------------------------main的样式*/
+.main {
+  height: 800px;
+  background-color: #f5f5f5;
+  margin-top: 66px;
+}
+
+.main .content {
+  height: 800px;
+  /*ps*/
+  background-color: skyblue;
+}
+
+.main .content .top {
+  height: 40px;
+  /*ps*/
+  background-color: pink;
+  margin-top: 78px;
+  font-size: 22px;
+}
+
+.main .content .top .all {
+  float: right;
+  font-size: 16px;
+  color: #424242;
+  margin-right: 28px;
+}
+
+.main .content .bottom {
+  height: 614px;
+  /*ps*/
+  background-color: hotpink;
+}
+
+.main .content .bottom .left {
+  width: 234px;
+  height: 614px;
+  background: url(images/girl.jpg);
+}
+
+.main .content .bottom .right {
+  width: 978px;
+  height: 614px;
+  /*ps*/
+  background-color: yellow;
+}
+
+.main .content .bottom .right .item {
+  width: 234px;
+  height: 300px;
+  background-color: #fff;
+  position: relative;
+  text-align: center;
+  float: left;
+  margin-right: 14px;
+  margin-bottom: 14px;
+}
+
+.main .content .bottom .right .item .free {
+  width: 64px;
+  height: 20px;
+  background-color: #ffac13;
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+  line-height: 20px;
+  /*margin: 0 auto;*/
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.main .content .bottom .right .item img {
+  margin-top: 20px;
+}
+
+.main .content .bottom .right .item p {
+  font-size: 12px;
+}
+
+.main .content .bottom .right .item p:nth-of-type(1) {
+  height: 22px;
+}
+
+.main .content .bottom .right .item p:nth-of-type(2) {
+  color: #b0b0b0;
+  height: 29px;
+}
+
+.main .content .bottom .right .item p:nth-of-type(3) {
+  color: #ff6700;
+}
+
+.main .content .bottom .right .item:nth-child(4n) {
+  margin-right: 0px;
+}
+
+/*----------------------------link的样式*/
+.link {
+  height: 211px;
+  /*ps*/
+  /*background-color: pink;*/
+  padding-top: 60px;
+  box-sizing:border-box;
+}
+
+.link dl {
+  float: left;
+  width: 160px;
+  font-size: 12px;
+}
+
+.link dl dt{
+  color: #424242;
+  height: 44px;
+}
+
+.link dl dd{
+  color: #757575;
+  height: 28px;
+}
+
+.link .tel {
+  width: 250px;
+  height: 112px;
+  /*ps*/
+  /*background-color: cyan;*/
+  float: right;
+  border-left: 1px solid #ececec;
+  text-align: center;
+}
+
+.link .tel p:nth-child(1) {
+  font-size: 18px;
+  color: #ff6700;
+  height: 28px;
+}
+
+.link .tel p:nth-child(2) {
+  font-size: 12px;
+  color: #616161;
+  height: 18px;
+}
+
+.link .tel p:nth-child(3) {
+  font-size: 12px;
+  color: #616161;
+}
+
+/*--------------------------footer的样式*/
+.footer {
+  height: 157px;
+  background-color: #fafafa;
+}
+
+.footer .content {
+  height: 157px;
+  /*ps*/
+  /*background-color: pink;*/
+  padding-top: 30px;
+  box-sizing:border-box;
+  background: url(images/bottom.png) no-repeat center 117px;
+}
+
+.footer .content .logo {
+  width: 55px;
+  height: 55px;
+  background: url(images/logo.png);
+  float: left;
+  margin-right: 11px;
+}
+
+.footer .content p {
+  /*margin-left: 66px;*/
+  font-size: 12px;
+}
+
+.footer .content p:nth-child(2) {
+  color: #757575;
+  height: 18px;
+}
+
+.footer .content p:nth-child(3) {
+  color: #b0b0b0;
+  height: 18px;
+}
+
+.footer .content p:nth-child(4) {
+  color: #b0b0b0;
+}

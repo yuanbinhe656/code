@@ -1,0 +1,4 @@
+#NOTE: This is an internal implementation file, its format can be changed without prior notice.
+#Thu Mar 04 20:14:58 CST 2021
+default-http\://repo.maven.apache.org/maven2/.lastUpdated=1614860098691
+http\://repo.maven.apache.org/maven2/.error=Could not transfer artifact com.opensymphony.quartz\:com.springsource.org.quartz\:jar\:1.6.2 from/to central (http\://repo.maven.apache.org/maven2)\: Failed to transfer http\://repo.maven.apache.org/maven2/com/opensymphony/quartz/com.springsource.org.quartz/1.6.2/com.springsource.org.quartz-1.6.2.jar. Error code 501, HTTPS Required

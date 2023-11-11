@@ -1,0 +1,610 @@
+/*------------------------top的样式*/
+.top {
+  height: 31px;
+  background-color: #f1f1f1;
+}
+
+.top .content {
+  height: 31px;
+  /*ps*/
+  background-color: pink;
+}
+
+.top .content .left {
+  width: 200px;
+  height: 31px;
+  /*ps*/
+  background-color: yellow;
+  line-height: 31px;
+}
+
+.top .content .left a {
+  color: #be1920;
+  margin-left: 7px;
+}
+
+.top .content ul li {
+  height: 31px;
+  float: left;
+  line-height: 31px;
+}
+
+.top .content ul li a {
+  padding: 0px 16px;
+}
+
+.top .content ul li a .icon-moreunfold {
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.top .content ul li .last {
+  padding-right: 0px;
+}
+
+/*--------------------------search的样式*/
+.search {
+  height: 80px;
+  /*ps*/
+  background-color: pink;
+  margin-top: 26px;
+}
+
+.search .logo {
+  width: 171px;
+  height: 62px;
+  background: url(../images/logo.png);
+}
+
+.search .cart {
+  width: 140px;
+  height: 36px;
+  border: 1px solid #dfdfdf;
+  background-color: #f7f7f7;
+  margin-right: 63px;
+  text-align: center;
+  line-height: 36px;
+  position: relative;
+}
+
+.search .cart .icon-cart {
+  color: #d55351;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.search .cart .icon-more {
+  color: #9fa8a7;
+  font-size: 14px;
+}
+
+.search .cart .num {
+  min-width: 16px;
+  height: 14px;
+  background-color: #df071e;
+  border-radius: 7px 7px 7px 0px;
+  position: absolute;
+  /*right: 18px;*/
+  left: 104px;
+  top: -6px;
+  line-height: 14px;
+  color: #fff;
+  padding: 0px 5px;
+}
+
+.search .cart .h {
+  width: 200px;
+  height: 100px;
+  background-color: red;
+  position: absolute;
+  top: 36px;
+  right: -1px;
+  background-color: #f7f7f7;
+  border: 1px solid #dfdfdf;
+  /*border-top: none;*/
+  display: none;
+}
+
+.search .cart .h .line {
+  width: 140px;
+  height: 1px;
+  background-color: #f7f7f7;
+  position: absolute;
+  top: -1px;
+  right: 0px;
+}
+
+.search .cart:hover .h {
+  display: block;
+}
+
+.search .center {
+  padding-left: 348px;
+}
+
+.search .center .txt {
+  width: 458px;
+  height: 36px;
+  box-sizing:border-box;
+  border: 2px solid #af1918;
+  padding-left: 10px;
+  vertical-align: top;
+}
+
+.search .center .sou {
+  width: 80px;
+  height: 36px;
+  background-color: #af1918;
+  color: #fff;
+  font-size: 16px;
+}
+
+.search .center ul {
+  padding-top: 8px;
+}
+
+.search .center ul li {
+  float: left;
+}
+
+.search .center ul li a {
+  padding: 0px 12px;
+}
+
+.search .center ul li .first {
+  color: #cb152b;
+}
+
+
+/*----------------------------nav的样式*/
+.nav {
+  height: 45px;
+  border-bottom: 2px solid #b1181a;
+}
+
+.nav .content {
+  height: 45px;
+  /*ps*/
+  background-color: deeppink;
+}
+
+.nav .content .all {
+  width: 209px;
+  height: 45px;
+  background-color: #b2191b;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  line-height: 45px;
+  float: left;
+}
+
+.nav .content ul {
+  float: left;
+  padding-top: 16px;
+}
+
+.nav .content ul li {
+  float: left;
+}
+
+.nav .content ul li a {
+  color: #000;
+  font-size: 16px;
+  margin-left: 48px;
+}
+/*--------------------------------banner的样式*/
+.banner {
+  height: 465px;
+  /*ps*/
+  background-color: pink;
+}
+
+.banner .left {
+  width: 209px;
+  height: 465px;
+  background-color: #c81622;
+}
+
+.banner .left li {
+  height: 31px;
+  line-height: 31px;
+  padding: 0px 11px;
+}
+
+.banner .left li a {
+  color: #fff;
+}
+
+.banner .left li .icon-more {
+  color: #fff;
+  font-size: 12px;
+  float: right;
+}
+
+.banner .left li:hover {
+  background-color: #f7f7f7;
+}
+
+.banner .left li:hover a,
+.banner .left li:hover .icon-more {
+  color: #c3131d;
+}
+
+.banner .center {
+  width: 721px;
+  height: 455px;
+  background: url(../images/banner_bg.png);
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.banner .right {
+  width: 250px;
+  height: 455px;
+  /*ps*/
+  background-color: skyblue;
+  margin-top: 10px;
+}
+
+.banner .right .one {
+  height: 165px;
+  box-sizing:border-box;
+  border: 1px solid #e5e5e5;
+  border-bottom: none;
+}
+
+.banner .right .one .otop {
+  height: 32px;
+  border-bottom: 1px dotted #eaeaea;
+  line-height: 32px;
+  padding: 0px 15px;
+  color: #000;
+  font-size: 14px;
+}
+
+.banner .right .one .otop a {
+  float: right;
+  font-size: 12px;
+}
+
+.banner .right .one .otop a .icon-more {
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.banner .right .one ul {
+  padding-top: 12px;
+  padding-left: 15px;
+}
+
+.banner .right .one ul li {
+  height: 24px;
+}
+
+.banner .right .one ul li a span {
+  font-weight: 700;
+  margin-right: 5px;
+}
+
+.banner .right .two {
+  width: 250px;
+  height: 210px;
+  border: 1px solid #e5e5e5;
+}
+
+.banner .right .two td {
+  border: 1px solid #e5e5e5;
+  width: 25%;
+  height: 33.33%;
+  text-align: center;
+}
+
+.banner .right .two td div {
+  width: 24px;
+  height: 24px;
+  background: url(../images/icons.png) no-repeat -17px -16px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.banner .right .three {
+  width: 250px;
+  height: 76px;
+  background: url(../images/ad.jpg);
+  margin-top: 5px;
+}
+
+/*-------------------------rec的样式*/
+.rec {
+  height: 163px;
+  background-color: #ebebeb;
+  margin-top: 11px;
+}
+
+.rec .today {
+  width: 205px;
+  height: 163px;
+  background-color: #5c5251;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+}
+
+.rec .today .clock {
+  width: 57px;
+  height: 57px;
+  background: url(../images/clock.png);
+  margin: 0 auto;
+  margin-top: 31px;
+  margin-bottom: 11px;
+}
+
+.rec .rec1 {
+  width: 248px;
+  height: 163px;
+  background: url(../images/recommend01.png);
+  float: left;
+  /*border-right: 1px solid #000;*/
+}
+
+.rec .line {
+  width: 1px;
+  height: 144px;
+  background-color: #dddddd;
+  float: left;
+  margin-top: 9px;
+}
+
+/*--------------------------------like的样式*/
+.like {
+  height: 262px;
+  /*ps*/
+  background-color: pink;
+  margin-top: 31px;
+}
+
+.like .ltop {
+  height: 29px;
+  /*ps*/
+  background-color: hotpink;
+  color: #000;
+  font-size: 18px;
+}
+
+.like .ltop a {
+  float: right;
+  font-size: 12px;
+  margin-right: 21px;
+}
+
+.like .ltop a .icon-refresh {
+  font-size: 12px;
+  margin-left: 9px;
+}
+
+.like .lbottom {
+  height: 233px;
+  border: 1px solid #eeeeee;
+  box-sizing:border-box;
+  background-color: #fff;
+}
+
+
+.like .lbottom .item {
+  width: 16.66%;
+  height: 100%;
+  /*ps*/
+  background-color: cyan;
+  text-align: center;
+  float: left;
+}
+
+.like .lbottom .item img {
+  margin-top: 12px;
+}
+
+.like .lbottom .item .sunshine {
+  height: 62px;
+  border-right: 1px solid #ededed;
+}
+
+.like .lbottom .item .sunshine p {
+  line-height: 21px;
+  text-align: left;
+  padding-left: 35px;
+}
+
+.like .lbottom .item .sunshine .rmb {
+    color: #d73532;
+    font-size: 16px;
+}
+
+.like .lbottom .item .no {
+  border-right: none;
+}
+
+/*--------------------------floor的样式*/
+.floor {
+  height: 390px;
+  /*ps*/
+  background-color: pink;
+  margin-top: 28px;
+}
+.floor .ftop {
+  height: 28px;
+  /*ps*/
+  background-color: cyan;
+  font-size: 18px;
+  color: #b82538;
+}
+
+.floor .ftop ul {
+  float: right;
+}
+
+.floor .ftop ul li {
+  float: left;
+  font-size: 12px;
+}
+
+.floor .ftop ul li a {
+  padding: 0px 16px;
+}
+
+.floor .ftop ul li .hot {
+  color: #c9182a;
+}
+
+.floor .fbottom {
+  height: 360px;
+  background-color: hotpink;
+  border-top: 2px solid #cb1524;
+}
+
+.floor .fbottom .item {
+  width: 210px;
+  height: 360px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.floor .fbottom .item ul li {
+  float: left;
+  width: 50%;
+  height: 33px;
+}
+
+.floor .fbottom .item ul li a {
+  width: 85px;
+  height: 32px;
+  /*background-color: red;*/
+  float: left;
+  text-align: center;
+  line-height: 32px;
+  border-bottom: 1px solid #ededed;
+  margin-left: 10px;
+}
+
+.floor .fbottom .item .tv {
+  margin-top: 26px;
+  font-size: 18px;
+  color: #bf1f2b;
+  height: 23px;
+}
+
+.floor .fbottom .item .hao {
+  color: #bf1f2b;
+  height: 32px;
+}
+
+/*----------------------------------bz的样式*/
+.bz {
+  height: 110px;
+  background-color: #f5f5f5;
+  margin-top: 37px;
+}
+
+.bz .content {
+  height: 110px;
+  /*ps*/
+  background-color: cyan;
+  border-bottom: 1px solid #ececec;
+}
+
+.bz .content .item {
+  width: 20%;
+  height: 100%;
+  /*ps*/
+  background-color: hotpink;
+  padding-top: 30px;
+  padding-left: 37px;
+  box-sizing:border-box;
+  float: left;
+}
+
+.bz .content .item .good {
+  width: 49px;
+  height: 49px;
+  background: url(../images/icons.png) no-repeat -253px -3px;
+  float: left;
+  margin-right: 8px;
+}
+
+.bz .content .item .g1 {
+  color: #000;
+  height: 24px;
+}
+
+/*--------------------------link的样式*/
+.link {
+  height: 187px;
+  background-color: #f5f5f5;
+}
+
+.link .content {
+  height: 187px;
+  /*ps*/
+  background-color: cyan;
+  padding-left: 52px;
+  padding-top: 22px;
+  box-sizing:border-box;
+  border-bottom: 1px solid #ececec;
+}
+
+.link .content dl {
+  float: left;
+  width: 199px;
+
+}
+
+.link .content dl dt {
+  font-size: 16px;
+  color: #000;
+  height: 30px;
+}
+
+.link .content dl dd {
+  height: 20px;
+}
+
+.link .content .last {
+  width: 80px;
+}
+
+.link .content .help {
+  width: 95px;
+  /*height: 200px;*/
+  /*ps*/
+  background-color: red;
+  float: right;
+  margin-right: 74px;
+  text-align: center;
+}
+
+.link .content .help .p1 {
+  font-size: 16px;
+  color: #000;
+  height: 30px; 
+}
+
+.link .content .help .app {
+  color: #000;
+  margin-top: 8px;
+}
+
+/*-----------------------footer的样式*/
+.footer {
+  height: 119px;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+
+.footer .f1 {
+  margin-top: 20px;
+  height: 28px;
+}
+
+.footer .f2 {
+  height: 20px;
+}

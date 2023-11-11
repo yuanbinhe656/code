@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+  *{margin:20px;padding:20px;}
+  li{list-style: none;}
+ .box{
+      width:1000px;
+      height:600px;
+      overflow: hidden;
+  }
+  
+  @keyframes move{
+      0%{transform: scale(1.0)}
+      100%{transform:scale(1.5) rotate(90deg) }
+  }
+  
+ 
+ .box img{
+      width:400px;
+      height:300px;
+    box-shadow: 5px 5px 5px rgb(148, 147, 147);
+    padding:10px 10px 15px;
+	position:absolute;
+  } 
+  img{
+	padding:10px 10px 15px;
+	position:absolute;}
+ .box img:hover{
+	transform:scale(1.5);
+	z-index:1;
+}
+.pic1{
+	 left:300px;
+	 top: 200px;
+	transform:rotate(-30deg);
+    position: relative;
+}
+ 
+.pic2{
+    left:200px;
+	 bottom: 0px;
+	transform:rotate(-20deg);
+    position: absolute;
+}
+.pic3{
+    left: 100px;
+	top:500px;
+	
+	transform:rotate(-10deg);
+    position: absolute;
+    
+}
+.pic4{
+left:800px;
+	top:600px;
+	transform:rotate(-30deg);
+    position: absolute;
+  
+}
+.pic5{
+left:300px;
+	 top: 200px;
+	transform:rotate(5deg);
+    position: absolute;
+}
+.pic6{
+	 left: 600px;
+	top:500px;
+	transform:rotate(30deg);
+    position: absolute;
+}
+    </style>
+</head>
+<body>
+    <div class="box">
+            <li class ="pic1"> <img src ="project_5_1.jpg"  > </li>
+            <li class ="pic2"> <img src ="project_5_2.jpg" > </li>
+            <li class ="pic3"> <img src ="project_5_3.jpg" > </li>
+            <li class ="pic4"> <img src ="project_5_4.jpg" > </li>
+            <li class ="pic5"> <img src ="project_5_5.jpg" > </li>
+            <li class ="pic6"> <img src ="project_5_6.jpg"  > </li>
+    </div>
+</body>
+</html>

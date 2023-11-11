@@ -1,0 +1,311 @@
+/*--------------------------样式的初始化*/
+/*清除默认的内外边距*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*去除小圆点*/
+ul {
+  list-style: none;
+}
+
+/*去除a标签默认的下划线*/
+a {
+  text-decoration: none;
+}
+
+/*清除浮动*/
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+}
+
+/*左浮动*/
+.fl {
+  float: left;
+}
+
+/*右浮动*/
+.fr {
+  float: right;
+}
+
+/*版心：宽度固定并且水平居中的盒子*/
+.w {
+  width: 980px;
+  margin: 0 auto;
+}
+
+/*设置页面的高度，项目结束之后记得删除！！！*/
+/*body {
+  height: 3000px;
+}*/
+
+/*---------------------------------网页头部的样式*/
+.header {
+  height: 62px;
+  padding-top: 20px;
+  /*自动内减*/
+  box-sizing:border-box;
+}
+
+.header .left {
+  width: 180px;
+  height: 24px;
+  background: url(images/logo.png);
+}
+
+.header .right {
+  width: 200px;
+  height: 30px;
+  background: url(images/search.png);
+}
+
+/*------------------------------导航的样式*/
+.nav {
+  height: 55px;
+  background: url(images/nav_bg.png);
+  border-top: 1px solid #e1e1e1;
+}
+
+.nav ul li {
+  float: left;
+}
+
+.nav ul li a {
+  width: 130px;
+  height: 55px;
+  /*background-color: red;*/
+  float: left;
+
+  font-size: 14px;
+  color: #000;
+  text-align: center;
+  line-height: 55px;
+  font-weight: 700;
+
+  background: url(images/nav_border.png) no-repeat right center;
+}
+
+/*--------------------------banner的样式*/
+.banner {
+  height: 666px;
+  background: url(images/banner.png);
+}
+
+/*----------------------------notice的样式*/
+.notice {
+  height: 29px;
+  background-color: #fbfbfb;
+  border-top: 1px solid #efefef;
+  border-bottom: 1px solid #efefef;
+}
+
+.notice .content {
+  height: 29px;
+}
+
+.notice .content .left {
+  /*width: 200px;*/
+  height: 29px;
+  line-height: 29px;
+  font-size: 12px;
+}
+
+.notice .content .left strong {
+  margin-right: 18px;
+}
+
+
+.notice .content .right {
+  width: 86px;
+  height: 16px;
+  background: url(images/share.png);
+  margin-right: 6px;
+  margin-top: 5px;
+}
+
+/*---------------------------main的样式*/
+.main {
+  height: 226px;
+  margin-top: 15px;
+}
+
+.main .left {
+  width: 312px;
+  height: 226px;
+  border: 1px solid #e4e4e4;
+  /*自动内减*/
+  box-sizing:border-box;
+  padding: 13px 6px 0px;
+  margin-right: 12px;
+}
+
+/*.main .left h2,
+.main .center h2,
+.main .right h2*/ 
+
+.main h2{
+  height: 18px;
+  font-size: 12px;
+  line-height: 18px;
+  color: #7ab800;
+  background: url(images/jiantou.png) no-repeat;
+  padding-left: 21px;
+}
+
+.main .left .bottom {
+  text-align: center;
+}
+
+.main .left .bottom img {
+  margin-top: 7px;
+}
+
+.main .left .bottom .arrl {
+  width: 18px;
+  height: 27px;
+  background: url(images/left_icon.png);
+  margin-top: 59px;
+  margin-left: 17px;
+}
+
+.main .left .bottom .arrr {
+  width: 17px;
+  height: 27px;
+  background: url(images/right_icon.png);
+  margin-top: 59px;
+  margin-right: 36px;
+}
+
+.main .center {
+  width: 375px;
+  height: 226px;
+  border: 1px solid #e4e4e4;
+  /*自动内减*/
+  box-sizing:border-box;
+  padding: 13px 6px 0px;
+}
+
+.main .center .more {
+  float: right;
+  font-size: 12px;
+  color: #666666;
+  font-weight: 700;
+}
+
+.main .center ul {
+  padding-left: 17px;
+  padding-right: 12px;
+  padding-top: 4px;
+}
+
+.main .center ul li {
+  height: 27px;
+  border-bottom: 1px dashed #dcdcdc;
+  line-height: 27px;
+}
+
+.main .center ul li a {
+  font-size: 12px;
+  color: #666666;
+}
+
+.main .center ul li .sorry {
+  color: #ff0000;
+  font-weight: 700;
+}
+
+.main .right {
+  width: 270px;
+  height: 226px;
+  border: 1px solid #e4e4e4;
+  /*自动内减*/
+  box-sizing:border-box;
+  padding: 13px 6px 0px;
+}
+
+.main .right ul {
+  padding-left: 22px;
+  padding-top: 2px;
+}
+
+.main .right ul li {
+  height: 20px;
+  line-height: 20px;
+  background: url(images/sbg.png) no-repeat left 6px;
+  padding-left: 7px;
+}
+
+.main .right ul li a {
+  font-size: 12px;
+  color: #666666;
+}
+
+.main .right  p {
+  font-size: 12px;
+  color: #666;
+  padding-left: 23px;
+}
+
+.main .right .first {
+  margin-top: 39px;
+  height: 22px;
+}
+
+/*---------------------网页的link部分*/
+.link {
+  height: 221px;
+  background-color: #2d2d2d;
+  margin-top: 52px;
+}
+
+.link .content {
+  height: 221px;
+  /*padding-top: 16px;*/
+  padding-left: 20px;
+  box-sizing:border-box;
+}
+
+.link .content dl {
+  float: left;
+  width: 108px;
+  font-size: 12px;
+  margin-top: 16px;
+}
+
+.link .content dl dt {
+  color: #c7c7c7;
+  height: 34px;
+}
+
+.link .content dl dd {
+  color: #707070;
+  height: 20px;
+}
+
+/*---------------------------footer的样式*/
+.footer {
+  height: 84px;
+  background-color: #2d2d2d;
+  text-align: center;
+  border-top: 1px dashed #414141;
+}
+
+.footer p {
+  font-size: 12px;
+}
+
+.footer .one {
+  margin-top: 10px;
+  height: 30px;
+}
+
+.footer .two {
+  height: 20px;
+}

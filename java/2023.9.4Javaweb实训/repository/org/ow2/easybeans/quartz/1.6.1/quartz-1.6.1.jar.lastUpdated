@@ -1,0 +1,4 @@
+#NOTE: This is an internal implementation file, its format can be changed without prior notice.
+#Thu Mar 04 20:14:47 CST 2021
+default-http\://repo.maven.apache.org/maven2/.lastUpdated=1614860087037
+http\://repo.maven.apache.org/maven2/.error=Could not transfer artifact org.ow2.easybeans\:quartz\:jar\:1.6.1 from/to central (http\://repo.maven.apache.org/maven2)\: Failed to transfer http\://repo.maven.apache.org/maven2/org/ow2/easybeans/quartz/1.6.1/quartz-1.6.1.jar. Error code 501, HTTPS Required

@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>实验4.2</title>
+<script type="text/javascript">
+
+  
+function avg(grade){
+      let arr=[grade]
+      for(var i=0; i<grade.length; i++){
+        avg += grade[i];
+      }
+      avg=avg/i;
+      return avg;
+  } function add(){
+    var newName = document.getElementById("newName").value;
+    var newMath = parseInt(document.getElementById("newMath").value);
+    let grade = [87,65,89];
+    grade.push(newMath);
+    var div = document.getElementById("myDiv");
+    var newRow = document.getElementById('p');
+    newRow.innerHTML = newName+':'+newMath;
+    newRow.dataset.studentName = newName;
+    newRow.dataset.math = newMath;
+    div.appendChild(newRow);
+    document.getElementById("bu").innerHTML ="学生平均成绩:"+avg(grade);
+  }
+
+  
+
+</script>
+
+</head>
+<body>
+ <div id="myDiv">
+  <p id="bu"></p>
+  <p id="p"></p>
+  <p id="p"></p>
+  <p id="p"></p>
+ </div>
+ <hr>
+姓名<input id="newName" type="text" >
+成绩<input id="newMath" type="text" >
+<input type="button" name="Submit" value="添加" onclick="add()">
+
+</body>
+</html>

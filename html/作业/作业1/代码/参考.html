@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户注册表</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h3 {
+            font-weight: 400;
+        }
+
+        form {
+            margin-left: 10px;
+        }
+
+        div {
+            width: 600px;
+            height: 30px;
+            line-height: 30px;
+            border-bottom: 1px solid #ccc;
+            padding: 8px;
+        }
+
+        .neirong {
+            height: 146px;
+        }
+
+       
+        
+        .zuce {
+           
+            left: 40px;
+            top: 12px;
+        }
+        .left {
+            margin-left: 80px;
+        }
+        .l2{
+            margin-left: 48px;
+        }
+    </style>
+</head>
+
+<body>
+<form action="">
+    <div>
+        <h3>用户注册</h3>
+    </div>
+    <div>
+        <span>昵称：</span> <span class="left"><input style="height: 20px;" type="text"></span>
+    </div>
+    <div>
+        <span>注册邮箱：</span> <span class="l2"><input style="height: 20px;" type="email" ></span>
+    </div>
+    <div>
+        <span>密码：</span> <span class="left"><input style="height: 20px;" type="password" placeholder="请输入密码"></span>
+    </div>
+    <div>
+        <span>性别：</span>
+        <span class="left">
+                <input type="radio" id="man" name="sex" checked><label for="man">男</label>
+                <input type="radio" id="woman" name="sex"><label for="woman">女</label>
+            </span>
+    </div>
+    <div>
+        <span>年龄：</span>
+        <span class="left">
+                <select style="width: 170px; height: 25px;">
+                    <option value=""></option>
+                    <option value="">18</option>
+                    <option value="">19</option>
+                    <option value="">20</option>
+                    <option value="">21</option>
+                    <option value="">22</option>
+                    <option value="">23</option>
+                    <option value="">24</option>
+                </select>
+            </span>
+    </div>
+    <div>
+        <span>兴趣爱好：</span>
+        <span class="l2">
+                <input type="checkbox" > 编程
+                <input type="checkbox"> 篮球
+                <input type="checkbox"> 游泳
+                <input type="checkbox"> 唱歌
+                <input type="checkbox"> 跑步
+                <input type="checkbox"> 吹牛
+            </span>
+    </div>
+    <div>
+       幸运色<label><input type="color" class="left" value="#00FF00">
+    </div>
+    <div class="neirong">
+        <span class="myself">自我介绍:</span>
+        <span class="l2">
+                <textarea name="" id="" cols="30" rows="8">个人简介：</textarea>
+            </span>
+    </div>
+    <div></div>
+    <div class="zuce">
+           
+            <input style="height: 30px; width: 66px; border: transparent; margin-left: 88px; background-color: rgb(36, 180, 36); color: white; font-weight: 600;" type="submit" value="立即注册">
+            
+    </div>
+    
+</form>
+</body>
+
+</html>
+

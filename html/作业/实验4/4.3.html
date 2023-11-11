@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>实验4.3</title>
+  <style>
+     *{
+      background-color: thistle;
+     }
+     .f1{
+       margin: 20px auto;
+       background-color: indigo;
+       width: 500px;
+       height: 300px;
+       line-height: 60px;
+       text-align: center;
+       color: white;
+       font-size: 18px;
+     }
+  </style>
+</head>
+<body>
+  <div class="box">
+      <form name="reg" method="POST" action="reg_success.html">
+        <br>
+         <fieldset class="f1"> <legend>用户登录</legend> 
+          用户名<input type="text" name="user"  placeholder="请输入您的用户名">
+          <p class="tip"></p>
+          密&nbsp;&nbsp;&nbsp;码<input type="text" name="user"  placeholder="请输入您的密码">
+          <p class="tip"></p>
+          <input id="sub "type="submit" value="提交" >&nbsp;&nbsp;&nbsp;&nbsp;
+          <input id="res "type="reset" value="重置" >
+      </form>
+  </div>
+  <script>
+    function checkuser(){
+      let str = document.reg.user.value;
+      let n = str.length;
+      let oTip = document.getElementsByClassName("tip")[0];
+      if(n<8||n>20){
+        oTip.innerText="用户名长度必须为8到20位!";
+        return false;
+      }
+      let x = str.charCodeAt(0);
+      if(x<65||(x>90&&x<97)||x>122){
+        oTip.innerText="用户名必须以英文字母开头!";
+        return false;
+      }
+      for(let i=1;i<n;i++){
+        x = str.charCodeAt(i);
+        if(x<48||(x>57&&x<65)||(x>90&&x<97)||x>122){
+          oTip.innerText="用户名首字符后的有效符号位数字、英文字母";
+          return false;
+        }
+      }
+      oTip.innerText="";
+      return true;
+    }
+
+    function checkPwd(){
+      let str = document.reg.pwd.value;
+      let n = str.length;
+      let oTip = document.getElementsByClassName("tip")[1];
+      if(n<8||n>20){
+        oTip.innerText="用户名长度必须为8到20位!";
+        return false;
+      }
+      let x,letN= 0,numN=0;
+      for(let i=0;i<n;i++){
+        x = str.charCodeAt(i);
+        if(x<48||(x>57&&x<65)||(x>90&&x<97)||x>122){
+          oTip.innerText="密码的有效符号位数字、英文字母";
+          return false;
+        }
+        else if((x>=65&&x<=90)||(x>=97)&&(x<=122))
+           letN++;
+        else
+            numN++;
+      }
+      if((letN===0)||(numN===0)){
+        oTip.innerText="密码不能全是字母或数字!";
+        return false;
+      }
+      else{
+        oTip.innerText="";
+        return true;
+      }
+    }
+    document.reg.onsubmit = function validateForm(){
+      if(checkuser()&&checkPwd())
+        return true;
+      else 
+        return false;
+    }
+  </script>
+</body>
+</html>

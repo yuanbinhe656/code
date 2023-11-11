@@ -1,0 +1,195 @@
+/*---------------------------top的样式*/
+.top {
+  height: 82px;
+}
+
+.top .logo {
+  width: 171px;
+  height: 62px;
+  background: url(../images/logo.png);
+  margin-top: 16px;
+}
+
+/*------------------------main的样式*/
+.main {
+  height: 486px;
+  background: #7e01ff url(../images/bg.png) no-repeat center center;
+}
+
+.main .content {
+  height: 486px;
+  position: relative;
+}
+
+.main .content .box {
+  width: 379px;
+  height: 362px;
+  background-color: #fff;
+  position: absolute;
+  top: 62px;
+  right: 119px;
+
+  padding-left: 37px;
+  padding-right: 39px;
+  padding-top: 22px;
+  box-sizing:border-box;
+}
+
+.main .content .box .one {
+  height: 41px;
+}
+
+.main .content .box .one a {
+  font-size: 18px;
+}
+
+
+.main .content .box .one .left {
+  padding-left: 9px;
+  border-right: 1px solid #ededed;
+  padding-right: 69px;
+}
+.main .content .box .one .right {
+  float: right;
+  color: #c51627;
+  padding-right: 13px;
+}
+
+.main .content .box .two {
+  height: 26px;
+  box-sizing:border-box;
+  background-color: #fffdee;
+  border: 1px solid #f4f0cd;
+  line-height: 26px;
+  padding-left: 9px;
+}
+
+.main .content .box .three {
+  width: 303px;
+  height: 36px;
+  border: 1px solid #38a4e4;
+  box-sizing:border-box;
+  margin-top: 10px;
+  background: url(../images/zh.png) no-repeat left center;
+  padding-left: 48px;
+}
+
+.main .content .box .four {
+  width: 303px;
+  height: 36px;
+  border: 1px solid #bababa;
+  box-sizing:border-box;
+  margin-top: 17px;
+  background: url(../images/pw.png) no-repeat;
+  padding-left: 49px;
+}
+
+.main .content .box .five {
+  height: 54px;
+  line-height: 54px;
+}
+
+.main .content .box .five input {
+  /*vertical-align: middle;*/
+  position: relative;
+  top: 2px;
+}
+
+.main .content .box .five a {
+  float: right;
+  color: #000;
+}
+
+.main .content .box .six {
+  width: 303px;
+  height: 41px;
+  background-color: #c81622;
+  color: #fff;
+  font-size: 16px;
+
+}
+
+.main .content .box .seven {
+  height: 32px;
+  margin-top: 32px;
+  line-height: 32px;
+}
+
+.main .content .box .seven .s1 {
+  width: 32px;
+  height: 32px;
+  background: url(../images/icon1.png);
+  float: left;
+  margin-right: 20px;
+}
+.main .content .box .seven .s2 {
+  width: 32px;
+  height: 32px;
+  background: url(../images/icon2.png);
+  float: left;
+  margin-right: 20px;
+}
+.main .content .box .seven .s3 {
+  width: 32px;
+  height: 32px;
+  background: url(../images/icon3.png);
+  float: left;
+  margin-right: 20px;
+}
+.main .content .box .seven .s4 {
+  width: 32px;
+  height: 32px;
+  background: url(../images/icon4.png);
+  float: left;
+  margin-right: 20px;
+}
+
+.main .content .box .seven .s5 {
+  float: right;
+  color: #0f6ea4;
+  margin-right: 10px;
+}
+
+
+/*-------------------------footer的样式*/
+.footer {
+  height: 120px;
+  text-align: center;
+  padding-top: 21px;
+  box-sizing:border-box;
+}
+
+.footer .p1 {
+  height: 28px;
+}
+.footer .p2 {
+  height: 20px;
+}
+
+/*----------------------------banner的样式*/
+.banner {
+  height: 120px;
+  background: url(../images/banner1.png);
+}
+
+.banner .line {
+  width: 207px;
+  height: 1px;
+  background-color: #000;
+  margin: 0 auto;
+  margin-top: 50px;
+  position: relative;
+}
+
+.banner .line .buy {
+  width: 107px;
+  background-color: #f5f5f5;
+
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  top: -9px;
+
+  text-align: center;
+}

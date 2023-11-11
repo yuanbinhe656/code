@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Jun 14 22:37:30 CST 2023
+@default-central-https\://repo.maven.apache.org/maven2/.lastUpdated=1686753450751
+https\://repo.maven.apache.org/maven2/.error=Could not transfer artifact org.mybatis\:mybatis\:pom\:x.x.x from/to central (https\://repo.maven.apache.org/maven2)\: Transfer failed for https\://repo.maven.apache.org/maven2/org/mybatis/mybatis/x.x.x/mybatis-x.x.x.pom

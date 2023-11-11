@@ -1,0 +1,11 @@
+me = imread('me.jpg');
+me = imresize(me,0.3);
+imshow(me);
+gray_me = rgb2gray(me);
+subplot(1,3,1),imshow(gray_me);
+im1 = yuanbinhe1(gray_me);
+im1 = mat2gray(im1);
+subplot(1,3,2),imshow(im1);
+im2 = yuanbinhe2(gray_me);
+im2 = mat2gray(im2);
+subplot(1,3,3),imshow(im2);
