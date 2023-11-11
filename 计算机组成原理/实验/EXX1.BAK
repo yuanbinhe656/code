@@ -1,0 +1,5 @@
+MOV A,#55H
+RR A
+RLCA
+CPL A
+END

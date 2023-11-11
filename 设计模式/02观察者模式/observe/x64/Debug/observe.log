@@ -1,0 +1,3 @@
+﻿  源.cpp
+E:\云文件\BaiduNetdiskWorkspace\代码\设计模式\02观察者模式\observe\源.cpp(205,15): warning C4305: “初始化”: 从“double”到“float”截断
+  observe.vcxproj -> E:\云文件\BaiduNetdiskWorkspace\代码\设计模式\02观察者模式\observe\x64\Debug\observe.exe

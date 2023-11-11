@@ -1,0 +1,86 @@
+#include<iostream>
+#include<math.h>
+#define pi 3.14			
+using namespace std;
+class Shape {
+public:
+	Shape(double);
+	virtual double area() = 0;
+	virtual double perimeter() = 0;
+	virtual ~Shape()
+	{}
+protected:
+	double a;
+};
+Shape::Shape(double i)
+{
+	a = i;
+}
+class Circle :virtual  public Shape {
+public:
+	Circle(double i) :Shape(i) {}
+	virtual double area() {
+		return pi * a * a;
+	}
+	virtual double perimeter() {
+		return pi * a * 2;
+	}
+	~Circle()
+	{
+		cout << "Circle will be delate" << endl;
+	}
+
+};
+class Rectangle :virtual public Shape {
+public:
+	Rectangle(double i, double j) :Shape(i), b(j) {}
+	virtual double area()
+	{
+		return a * b;
+	}
+	virtual double perimeter()
+	{
+		return 2 * (a + b);
+	}
+	~Rectangle()
+	{
+		cout << "Rectangle will be delate" << endl;
+	}
+protected:
+	double b;
+};
+class Triangle :virtual public Circle, virtual public Rectangle {
+public:
+	Triangle(double i, double j,double t) :Shape(i), Circle(i), Rectangle(i,j),c(t) {}
+	virtual double area()
+	{
+		double p = (a + b + c) / 2;
+		return  sqrt(p * (p - a) * (p - b) * (p - c));
+	}
+	virtual double perimeter()
+	{
+		return  (a + b + c);
+	}
+	~Triangle() 
+	{
+		cout << "Triangle will be delate" << endl;
+	}
+protected:
+	double c;
+};
+int main()
+{
+	
+	Shape* ss[] = { 
+		new Circle(2.0), 
+		new Rectangle(5,8),
+		new Triangle(3,4,5) 
+	};
+
+	int itemCount = sizeof(ss) / sizeof(Shape*);
+	for (int i = 0; i < itemCount; i++)
+		cout << i+1 << " 周长：" << ss[i]->perimeter() << " 面积：" << ss[i]->area() << endl;
+	for (int i = 0; i < itemCount; i++) 
+		delete ss[i];
+		return 0; 
+}

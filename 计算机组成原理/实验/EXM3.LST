@@ -1,0 +1,5 @@
+00 7C55     MOV A,#55H
+02 D0       RR A
+03 DC       RLC A
+04 E4       CPL A
+            END

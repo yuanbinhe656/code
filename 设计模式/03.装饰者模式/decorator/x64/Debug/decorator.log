@@ -1,0 +1,10 @@
+﻿  decorator.cpp
+E:\云文件\BaiduNetdiskWorkspace\代码\设计模式\03.装饰者模式\decorator\decorator.cpp(79,23): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+E:\云文件\BaiduNetdiskWorkspace\代码\设计模式\03.装饰者模式\decorator\decorator.cpp(83,23): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+E:\云文件\BaiduNetdiskWorkspace\代码\设计模式\03.装饰者模式\decorator\decorator.cpp(86,4): warning C4551: 缺少参数列表的函数调用
+E:\云文件\BaiduNetdiskWorkspace\代码\设计模式\03.装饰者模式\decorator\decorator.cpp(125,29): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+E:\云文件\BaiduNetdiskWorkspace\代码\设计模式\03.装饰者模式\decorator\decorator.cpp(129,29): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+E:\云文件\BaiduNetdiskWorkspace\代码\设计模式\03.装饰者模式\decorator\decorator.cpp(132,4): warning C4551: 缺少参数列表的函数调用
+E:\云文件\BaiduNetdiskWorkspace\代码\设计模式\03.装饰者模式\decorator\decorator.cpp(134): warning C4715: “Decoratro::Price”: 不是所有的控件路径都返回值
+E:\云文件\BaiduNetdiskWorkspace\代码\设计模式\03.装饰者模式\decorator\decorator.cpp(88): warning C4715: “concreteConponent::Price”: 不是所有的控件路径都返回值
+  decorator.vcxproj -> E:\云文件\BaiduNetdiskWorkspace\代码\设计模式\03.装饰者模式\decorator\x64\Debug\decorator.exe

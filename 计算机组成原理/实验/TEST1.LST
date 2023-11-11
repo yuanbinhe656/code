@@ -1,0 +1,37 @@
+00 7C12     MOV A,#12H
+02 80       MOV R0,A
+             
+03 7C23     MOV A,#23H
+05 8801     MOV 01H,A
+            
+07 7C32     MOV A,#32H
+09 8803     MOV 03H,A
+0B 7C03     MOV A,#03H
+0D 81       MOV R1,A
+            
+0E 7C32     MOV A,#32H
+10 3C10     SUB A,#10H
+12 E4       CPL A
+13 82       MOV R2,A
+            
+14 70       MOV A,R0
+15 6C02     OR A,#02H
+17 80       MOV R0,A
+            
+18 7801     MOV A,01H
+1A 1C01     ADD A,#01H
+1C 8801     MOV 01H,A
+            
+1E 75       MOV A,@R1
+            LOOP:
+1F BC25        CALL INCA
+21 A027        JC COUT
+23 AC1F        JMP LOOP
+            INCA:
+25 DC            RLC A
+26 CC            RET
+            COUT:
+27 D8            RRC A
+28 85           MOV @R1,A
+29 C4       OUT   
+            END
