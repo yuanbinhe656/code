@@ -1,0 +1,17 @@
+E:\云文件\BaiduNetdiskWorkspace\代码\c#\练习\程序检验\bin\Debug\net6.0-windows\程序检验.exe
+E:\云文件\BaiduNetdiskWorkspace\代码\c#\练习\程序检验\bin\Debug\net6.0-windows\程序检验.deps.json
+E:\云文件\BaiduNetdiskWorkspace\代码\c#\练习\程序检验\bin\Debug\net6.0-windows\程序检验.runtimeconfig.json
+E:\云文件\BaiduNetdiskWorkspace\代码\c#\练习\程序检验\bin\Debug\net6.0-windows\程序检验.dll
+E:\云文件\BaiduNetdiskWorkspace\代码\c#\练习\程序检验\bin\Debug\net6.0-windows\程序检验.pdb
+E:\云文件\BaiduNetdiskWorkspace\代码\c#\练习\程序检验\obj\Debug\net6.0-windows\程序检验.csproj.AssemblyReference.cache
+E:\云文件\BaiduNetdiskWorkspace\代码\c#\练习\程序检验\obj\Debug\net6.0-windows\程序检验.Form1.resources
+E:\云文件\BaiduNetdiskWorkspace\代码\c#\练习\程序检验\obj\Debug\net6.0-windows\程序检验.csproj.GenerateResource.cache
+E:\云文件\BaiduNetdiskWorkspace\代码\c#\练习\程序检验\obj\Debug\net6.0-windows\程序检验.GeneratedMSBuildEditorConfig.editorconfig
+E:\云文件\BaiduNetdiskWorkspace\代码\c#\练习\程序检验\obj\Debug\net6.0-windows\程序检验.AssemblyInfoInputs.cache
+E:\云文件\BaiduNetdiskWorkspace\代码\c#\练习\程序检验\obj\Debug\net6.0-windows\程序检验.AssemblyInfo.cs
+E:\云文件\BaiduNetdiskWorkspace\代码\c#\练习\程序检验\obj\Debug\net6.0-windows\程序检验.csproj.CoreCompileInputs.cache
+E:\云文件\BaiduNetdiskWorkspace\代码\c#\练习\程序检验\obj\Debug\net6.0-windows\程序检验.dll
+E:\云文件\BaiduNetdiskWorkspace\代码\c#\练习\程序检验\obj\Debug\net6.0-windows\refint\程序检验.dll
+E:\云文件\BaiduNetdiskWorkspace\代码\c#\练习\程序检验\obj\Debug\net6.0-windows\程序检验.pdb
+E:\云文件\BaiduNetdiskWorkspace\代码\c#\练习\程序检验\obj\Debug\net6.0-windows\程序检验.genruntimeconfig.cache
+E:\云文件\BaiduNetdiskWorkspace\代码\c#\练习\程序检验\obj\Debug\net6.0-windows\ref\程序检验.dll

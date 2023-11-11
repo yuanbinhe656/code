@@ -1,0 +1,16 @@
+F:\代码\c#\练习\001\bin\Debug\net5.0\001.exe
+F:\代码\c#\练习\001\bin\Debug\net5.0\001.deps.json
+F:\代码\c#\练习\001\bin\Debug\net5.0\001.runtimeconfig.json
+F:\代码\c#\练习\001\bin\Debug\net5.0\001.runtimeconfig.dev.json
+F:\代码\c#\练习\001\bin\Debug\net5.0\001.dll
+F:\代码\c#\练习\001\bin\Debug\net5.0\ref\001.dll
+F:\代码\c#\练习\001\bin\Debug\net5.0\001.pdb
+F:\代码\c#\练习\001\obj\Debug\net5.0\001.csproj.AssemblyReference.cache
+F:\代码\c#\练习\001\obj\Debug\net5.0\001.GeneratedMSBuildEditorConfig.editorconfig
+F:\代码\c#\练习\001\obj\Debug\net5.0\001.AssemblyInfoInputs.cache
+F:\代码\c#\练习\001\obj\Debug\net5.0\001.AssemblyInfo.cs
+F:\代码\c#\练习\001\obj\Debug\net5.0\001.csproj.CoreCompileInputs.cache
+F:\代码\c#\练习\001\obj\Debug\net5.0\001.dll
+F:\代码\c#\练习\001\obj\Debug\net5.0\ref\001.dll
+F:\代码\c#\练习\001\obj\Debug\net5.0\001.pdb
+F:\代码\c#\练习\001\obj\Debug\net5.0\001.genruntimeconfig.cache
